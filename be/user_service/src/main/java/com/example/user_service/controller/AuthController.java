@@ -1,5 +1,6 @@
 package com.example.user_service.controller;
 
+import com.example.user_service.model.DTO.request.ChangePasswordDTO;
 import com.example.user_service.model.DTO.request.FormLogin;
 import com.example.user_service.model.DTO.request.FormReg;
 import com.example.user_service.model.DTO.response.MyRespon;
@@ -36,43 +37,27 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    @Secured("ADMIN")
-    ResponseEntity<?> registry(@RequestBody FormReg formReg){
-        MyRespon myRespon = new MyRespon();
-        if (userServiceImp.existByUserName(formReg.getUsername())){
-            myRespon.setMessage("The user name is already used! Try again!");
-            return ResponseEntity.status(400).body(myRespon.getMessage());
-        }
-        if (userServiceImp.existByEmail(formReg.getEmail())){
-            myRespon.setMessage("The email is already!Try again!");
-            return  ResponseEntity.status(400).body(myRespon.getMessage());
-        }
-        userServiceImp.save(formReg);
-        myRespon.setMessage("Create user success");
-        return new ResponseEntity<>(myRespon.getMessage(), HttpStatus.OK);
-    }
-
+    ResponseEntity<?> registry(@RequestBody FormReg formReg){return userServiceImp.save(formReg);}
 
     @PostMapping("/login")
     ResponseEntity<?> login(@RequestBody FormLogin formLogin){
-        UserPrinciple userPrinciple;
-        if (!userServiceImp.existByUserName(formLogin.getUsername())){
-            return ResponseEntity.status(400).body("username not found");
-        }
-        try {
-            Authentication authentication =authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(formLogin.getUsername(),formLogin.getPassword()));
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            String token = jwtProvider.generateToken(authentication);
-            userPrinciple = (UserPrinciple) authentication.getPrincipal();
-            return ResponseEntity.ok(
-                    new JwtResponse(userPrinciple.getId(), userPrinciple.getUsername(),token,userPrinciple.getAuthorities() )
-            );
-        }catch (Exception e){
-            e.printStackTrace();
-            return ResponseEntity.status(400).body(new BCryptPasswordEncoder().matches(formLogin.getPassword(), "$2y$10$zob.ln.csZpcFGflN5yEM.mYIM3QuaBNLwSTpw5XnndCfkOE1sE7u"));
-        }
+       return ResponseEntity.ok(userServiceImp.Login(formLogin));
+    }
 
+    @GetMapping("/check-username")
+    public ResponseEntity<Boolean> checkUsernameExists(@RequestParam String username) {
+        boolean exists = userServiceImp.existByUserName(username);
+        return ResponseEntity.ok(exists);
+    }
+
+    @GetMapping("/check-email")
+    public ResponseEntity<Boolean> checkEmailExists(@RequestParam String email) {
+        boolean exists = userServiceImp.existByEmail(email);
+        return ResponseEntity.ok(exists);
+    }
+    @PostMapping("/changePassword")
+    private ResponseEntity<?> changePassword(@RequestParam Long userId, @RequestBody ChangePasswordDTO changePasswordDTO){
+        return ResponseEntity.ok(userServiceImp.changePassword(userId,changePasswordDTO));
     }
 
 
