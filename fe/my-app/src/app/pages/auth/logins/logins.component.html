@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="login-wrapper">
+    <div class="image-section">
+      <img src="assets/img/loginImg.png" alt="Background Image" />
+    </div>
+    <div class="form-section">
+      <h2 class="title">LOGIN</h2>
+      <form (ngSubmit)="onSubmit()">
+         <label for="username">Username:</label>
+        <div class="form-group">
+        <fa-icon [icon]="faUser" class="icon"></fa-icon>
+        <input type="text" id="username" class="input-field" [(ngModel)]="username" name="username" required/>
+        </div>
+        <div *ngIf="usernameError" class="error-massage">{{usernameError}}</div>
+
+        <label for="password">Password:</label>
+        <div class="form-group">
+        <fa-icon [icon]="faLock" class="icon"></fa-icon>
+        <input type="password" id="password" class="input-field" [(ngModel)]="password" name="password" required/>
+        </div>
+        <div *ngIf="passwordError" class="error-massage">{{passwordError}}</div>
+        <button type="submit" class="login-button">Sign In</button>
+        <div class="options">
+          <a [routerLink]="['/register']" class="register-link">Register</a>
+          <a [routerLink]="['/forgot-password']" class="forgot-password-link">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

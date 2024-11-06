@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Tính phần trăm mỡ trong cơ thể</h2>
+
+  <label for="gender">Giới tính:</label>
+  <select [(ngModel)]="gender" id="gender">
+    <option value="male">Nam</option>
+    <option value="female">Nữ</option>
+  </select>
+
+  <label for="waist">Vòng bụng (cm):</label>
+  <input type="number" [(ngModel)]="waist" id="waist" />
+
+  <label for="neck">Vòng cổ (cm):</label>
+  <input type="number" [(ngModel)]="neck" id="neck" />
+
+  <label for="height">Chiều cao (cm):</label>
+  <input type="number" [(ngModel)]="height" id="height" />
+
+  <label for="hip">Vòng hông (cm, chỉ dành cho nữ):</label>
+  <input type="number" [(ngModel)]="hip" id="hip" *ngIf="gender === 'female'" />
+
+  <button (click)="calculateBFP()">Tính toán</button>
+
+  <div *ngIf="bfp !== null">
+    <h3>Phần trăm mỡ trong cơ thể: {{ bfp.toFixed(2) }}%</h3>
+  </div>
+</div>

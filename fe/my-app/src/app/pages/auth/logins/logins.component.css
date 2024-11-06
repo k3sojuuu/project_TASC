@@ -1,0 +1,121 @@
+/* Toàn bộ trang */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  background-image: url('/assets/img/img2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-wrapper {
+  display: flex;
+  width: 800px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: white;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.image-section {
+  width: 50%;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 14px;
+  color: #646464;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0px 8px 8px 0px;
+  font-size: 14px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(45deg, #69b2ff, #12e18b);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.5s ease;
+}
+
+button:hover {
+  animation: colorChange 0.5s forwards;
+}
+
+@keyframes colorChange {
+  0% {
+    background: linear-gradient(45deg, #69b2ff, #12e18b); /* Màu ban đầu */
+  }
+  100% {
+    background: linear-gradient(45deg, #29ffd1, #0090cc);
+  }
+}
+
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.register-link,
+.forgot-password-link {
+  font-size: 14px;
+  color: linear-gradient(45deg, #69b2ff, #12e18b);
+  text-decoration: none;
+}
+
+.register-link:hover,
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.form-group{
+  display: flex;
+}
+
+.icon{
+  padding: 11px;
+  background-color: #b3b3b3;
+  height: 100%;
+  border-radius: 8px 0px 0px 8px;
+}

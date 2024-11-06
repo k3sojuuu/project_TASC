@@ -1,0 +1,75 @@
+/* Đặt toàn bộ navbar ở đầu trang và cố định */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background-image: linear-gradient(to right, #ffffff, #c7f9ee, #9abbf7, #91eae4); */
+  background-color: #000000;
+  padding: 1rem 0;
+  /* box-shadow: 0 4px 8px rgba(134, 134, 134, 0.2); */
+  z-index: 1000;
+  font-family: "Gilroy", Sans-serif;
+}
+
+.navbar > nav{
+  margin: 0 auto;
+}
+
+
+.navbar nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-left {
+  margin-left: 20px;
+  margin-right: 900px;
+}
+
+/* Căn chỉnh các mục bên phải */
+/* .nav-right {
+  margin: 10px;
+  border-bottom: #ffffff solid 1px ;
+} */
+
+
+.navbar nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 15px;
+  font-weight: 400;
+}
+
+
+/* Thay đổi màu sắc khi hover mà không thay đổi kích thước */
+.navbar nav ul li a:hover {
+  color: #000000; /* Màu khi hover */
+  background-color: #ffffff; /* Màu nền khi hover */
+}
+
+/* Định dạng cho logo */
+.nav-left img {
+  height: 60px;
+  vertical-align: middle;
+}
+
+/* Thêm khoảng cách cho nội dung trang sau navbar */
+body {
+  padding-top: 80px;
+}
+
+.button-icon{
+  background-color: #000000;
+  border: #ffffff;
+  margin-left: 20px;
+  color: #ffffff;
+}

@@ -40,7 +40,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     }
     @Bean
     public static PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder(BCryptPasswordEncoder.BCryptVersion.$2Y);
+        return new BCryptPasswordEncoder();
     }
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {

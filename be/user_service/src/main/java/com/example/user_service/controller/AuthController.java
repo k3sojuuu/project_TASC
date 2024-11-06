@@ -1,6 +1,7 @@
 package com.example.user_service.controller;
 
 import com.example.user_service.model.DTO.request.ChangePasswordDTO;
+import com.example.user_service.model.DTO.request.FormForgotPassword;
 import com.example.user_service.model.DTO.request.FormLogin;
 import com.example.user_service.model.DTO.request.FormReg;
 import com.example.user_service.model.DTO.response.MyRespon;
@@ -37,6 +38,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @CrossOrigin(origins = "http://localhost:4200")
     ResponseEntity<?> registry(@RequestBody FormReg formReg){return userServiceImp.save(formReg);}
 
     @PostMapping("/login")
@@ -44,21 +46,29 @@ public class AuthController {
        return ResponseEntity.ok(userServiceImp.Login(formLogin));
     }
 
-    @GetMapping("/check-username")
+    @GetMapping("/check_username")
     public ResponseEntity<Boolean> checkUsernameExists(@RequestParam String username) {
         boolean exists = userServiceImp.existByUserName(username);
         return ResponseEntity.ok(exists);
     }
 
-    @GetMapping("/check-email")
+    @GetMapping("/check_email")
     public ResponseEntity<Boolean> checkEmailExists(@RequestParam String email) {
         boolean exists = userServiceImp.existByEmail(email);
         return ResponseEntity.ok(exists);
     }
-    @PostMapping("/changePassword")
-    private ResponseEntity<?> changePassword(@RequestParam Long userId, @RequestBody ChangePasswordDTO changePasswordDTO){
+    @PostMapping("/change_password")
+    ResponseEntity<?> changePassword(@RequestParam Long userId, @RequestBody ChangePasswordDTO changePasswordDTO){
         return ResponseEntity.ok(userServiceImp.changePassword(userId,changePasswordDTO));
     }
 
+    @PostMapping("/create_code_forgot_password")
+    ResponseEntity<?> createCodeForgot(@RequestBody FormForgotPassword forgotPassword){
+        return ResponseEntity.ok(userServiceImp.createCodeForgot(forgotPassword));
+    }
 
+    @GetMapping("/claim_new_password")
+    ResponseEntity<?> claimsPass(@RequestParam String codeCofirm){
+        return ResponseEntity.ok(userServiceImp.claimsPassword(codeCofirm));
+    }
 }

@@ -5,36 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443866c9-4aeb-4aca-af5b-4e1a12e4c576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../be/order-service/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Config/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Config/RestTemplateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Controller/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/OrderServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Security/JwtEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Security/JwtEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Security/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Security/JwtProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Security/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Security/JwtTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/Service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/java/com/example/orderservice/user_principle/UserPrinciple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/java/com/example/bookingService/user_principle/UserPrinciple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/order-service/src/test/java/com/example/orderservice/OrderServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/booking-service/src/test/java/com/example/orderservice/OrderServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/src/main/java/com/example/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/src/main/java/com/example/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/product-service/src/test/java/com/example/productservice/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/src/test/java/com/example/productservice/ProductServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/implement/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/implement/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/about-us/about-us.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/about-us/about-us.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,32 +73,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/GitHub/project_TASC/be/user_service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "2de9bc88522fdb61f20c2e911c48d052",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/project_TASC/be/user_service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2de9bc88522fdb61f20c2e911c48d052&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="user_service.main" />
@@ -120,6 +121,7 @@
       <workItem from="1729740447918" duration="5267000" />
       <workItem from="1729757782470" duration="894000" />
       <workItem from="1730252976391" duration="110000" />
+      <workItem from="1730771901144" duration="513000" />
     </task>
     <servers />
   </component>

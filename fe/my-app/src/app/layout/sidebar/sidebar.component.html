@@ -1,1 +1,31 @@
-<p>sidebar works!</p>
+<div class="navbar">
+  <nav>
+    <ul>
+      <li class="nav-left">
+        <a [routerLink]="['/']">
+          <img src="/assets/img/MyPT-logo.png" alt="noo" /> MyPt
+        </a>
+      </li>
+      <li class="nav-right">
+        <a [routerLink]="['/my-pt']">PT</a>
+      </li>
+      <li class="nav-right">
+        <a [routerLink]="['/aboutUs']">BLOG</a>
+      </li>
+      <li class="nav-right">
+        <a [routerLink]="['/contacts']">CONTACT</a>
+      </li>
+      <li class="nav-right">
+        <a [routerLink]="['/profile']">ABOUT ME</a>
+      </li>
+      <li class="">
+        <ng-container *ngIf="isLoggedIn; else loginTemplate">
+          <button class="button-icon" (click)="logout()"><fa-icon [icon]="faSignOutAlt"/></button>
+        </ng-container>
+        <ng-template #loginTemplate>
+          <a [routerLink]="['/login']">LOGIN</a>
+        </ng-template>
+      </li>
+    </ul>
+  </nav>
+</div>
