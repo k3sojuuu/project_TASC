@@ -1,1 +1,24 @@
-<p>slide-home-page works!</p>
+<div>
+   <div class="container-slide">
+
+  </div>
+      <div data-aos="zoom-in" class="slide" *ngIf="slideShow === 0"  style="background-image: url('assets/img/homePageImg/img111.png')">
+
+      </div >
+      <div data-aos="zoom-in" class="slide" *ngIf="slideShow === 1"  style="background-image: url('assets/img/homePageImg/img112.png')">
+
+      </div>
+      <div data-aos="zoom-in" class="slide" *ngIf="slideShow === 2"  style="background-image: url('assets/img/homePageImg/img113.png')">
+
+      </div>
+      <div data-aos="zoom-in" class="slide" *ngIf="slideShow === 3"  style="background-image: url('assets/img/homePageImg/img114.png')">
+      </div>
+   </div>
+   <div class="button-main">
+    <div class="prev">
+      <button (click)="prevSlide()">Back</button>
+    </div>
+    <div class="next">
+      <button (click)="nextSlide()">Next</button>
+    </div>
+</div>

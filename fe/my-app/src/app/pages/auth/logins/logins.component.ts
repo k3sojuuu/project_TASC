@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { AuthServicesService } from '../../../services/auth-services.service';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -11,6 +12,17 @@ import { Router } from '@angular/router';
 })
 
 export class LoginsComponent {
+
+  ngOnInit(): void {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-in-out',
+      once: true
+    })
+    window.addEventListener('scroll', () => {
+      AOS.refresh();
+    });
+  }
   faUser = faUser;
   faLock = faLock;
 

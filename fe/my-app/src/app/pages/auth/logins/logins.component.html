@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="login-wrapper">
+  <div class="login-wrapper" data-aos="fade-down">
     <div class="image-section">
       <img src="assets/img/loginImg.png" alt="Background Image" />
     </div>
@@ -19,7 +19,7 @@
         <input type="password" id="password" class="input-field" [(ngModel)]="password" name="password" required/>
         </div>
         <div *ngIf="passwordError" class="error-massage">{{passwordError}}</div>
-        <button type="submit" class="login-button">Sign In</button>
+        <button type="submit" class="login-button" data-aos="fade-up">Sign In</button>
         <div class="options">
           <a [routerLink]="['/register']" class="register-link">Register</a>
           <a [routerLink]="['/forgot-password']" class="forgot-password-link">Forgot Password?</a>

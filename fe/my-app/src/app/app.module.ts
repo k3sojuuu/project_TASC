@@ -26,6 +26,14 @@ import { ConfirmPasswordComponent } from './pages/auth/confirm-password/confirm-
 import { CalculatorFatComponent } from './pages/home-pages/calculator-fat/calculator-fat.component';
 import { Content3Component } from './pages/home-pages/content3/content3.component';
 import { FeedbackHomePageComponent } from './pages/home-pages/feedback-home-page/feedback-home-page.component';
+import { ContentPt1Component } from './pages/my-pt/content-pt1/content-pt1.component';
+import { ContentPt2Component } from './pages/my-pt/content-pt2/content-pt2.component';
+import { ContentPt3Component } from './pages/my-pt/content-pt3/content-pt3.component';
+import { ContentPt4Component } from './pages/my-pt/content-pt4/content-pt4.component';
+import { ContentPt5Component } from './pages/my-pt/content-pt5/content-pt5.component';
+import { PtPageModule } from './pages/my-pt/pt-page.module';
+import { SlideHomePageComponent } from './pages/home-pages/slide-home-page/slide-home-page.component';
+
 
 
 @NgModule({
@@ -47,7 +55,13 @@ import { FeedbackHomePageComponent } from './pages/home-pages/feedback-home-page
     ForgotPasswordComponent,
     ConfirmPasswordComponent,
     CalculatorFatComponent,
-    FeedbackHomePageComponent
+    FeedbackHomePageComponent,
+    ContentPt1Component,
+    ContentPt2Component,
+    ContentPt3Component,
+    ContentPt4Component,
+    ContentPt5Component,
+    SlideHomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +70,8 @@ import { FeedbackHomePageComponent } from './pages/home-pages/feedback-home-page
     FormsModule,
     ReactiveFormsModule,
     HomePagesModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PtPageModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
