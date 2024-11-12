@@ -1,0 +1,73 @@
+<div class="filter">
+<div class="main-container">
+  <div class="imgProfile">
+     <div>
+         <h3>Personal Information</h3>
+         <img src="https://i.imgur.com/PRbJFE0.jpeg" alt="">
+     </div>
+     <button><i class="fas fa-camera fa-3x"></i>Change avatar</button>
+     <div>
+         <h2>{{userProfile.firstName}} {{userProfile.lastName}}</h2>
+     </div>
+     <div class="description">
+         <p>"{{userProfile.description}}"</p>
+     </div>
+     <div class="social">
+      <p><i class="fab fa-facebook"></i> Facebook</p>
+      <p><i class="fab fa-instagram"></i> Instagram</p>
+
+     </div>
+  </div>
+  <div class="infoProfile container my-4">
+    <div class="content-info">
+     <div class="info-item mb-3">
+      <h3 class="fw-bold ">Address:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-home fa-2x "></i>
+        <p class="mb-0">{{userProfile.address}}</p>
+      </div>
+    </div>
+    <div class="info-item mb-3">
+      <h3 class="fw-bold ">Date of Birth:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-calendar-alt fa-2x "></i>
+        <p class="mb-0">{{userProfile.dateOfBirth}}</p>
+      </div>
+    </div>
+    <div class="info-item mb-3">
+      <h3 class="fw-bold ">Age:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-cake-candles fa-2x "></i>
+        <p class="mb-0">{{userProfile.age}}</p>
+      </div>
+    </div>
+    </div>
+    <div class="content-info">
+    <div class="info-item mb-3">
+      <h3 class="fw-bold ">Gender:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-genderless fa-2x "></i>
+        <p class="mb-0">{{userProfile.gender}}</p>
+      </div>
+    </div>
+    <div class="info-item mb-3">
+      <h3 class="fw-bold ">Phone Number:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-phone-alt fa-2x "></i>
+        <p class="mb-0">{{userProfile.phone_number}}</p>
+      </div>
+    </div>
+    <div class="info-item mb-3">
+      <h3 class="fw-bold ">Email:</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-envelope fa-2x  "></i>
+        <p class="mb-0">{{userProfile.email}}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button>Register to become PT</button>
+  </div>
+  </div>
+</div>
+</div>

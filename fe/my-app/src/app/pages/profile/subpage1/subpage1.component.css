@@ -1,0 +1,136 @@
+.main-container{
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-container {
+  background-image: url('/assets/img/profileImg/mainProfile2.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #565656;
+}
+
+.imgProfile{
+  width: 20%;
+}
+
+.imgProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+html, body {
+  height: 100%; /* Đảm bảo body và html có chiều cao 100% */
+  margin: 0; /* Xóa bỏ khoảng cách mặc định */
+}
+
+.imgProfile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 20px;
+  object-fit: cover;
+  border: 5px solid rgb(220, 220, 220);
+}
+
+.description p{
+  text-align: center;
+  word-wrap: break-word;
+  overflow: hidden;
+  word-break: break-word;
+  white-space: normal;
+  font-style: italic;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+button {
+  display: flex;                  /* Sử dụng flexbox để căn chỉnh biểu tượng và văn bản */
+  align-items: center;            /* Căn giữa theo chiều dọc */
+  justify-content: center;        /* Căn giữa theo chiều ngang */
+  padding: 5px 10px;             /* Padding cho nút */
+  background-color: #82c0c9;      /* Màu nền nút */
+  color: white;                   /* Màu chữ */
+  border: none;                   /* Xóa viền */
+  border-radius: 15px;             /* Bo góc */
+  cursor: pointer;               /* Thay đổi con trỏ khi hover */
+  font-size: 16px;                /* Kích thước chữ */
+  height: 40px;
+  transition: 0.3s ease;
+}
+
+button i {
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+
+button:hover {
+  background-color: #6be4fc;
+  transform: scale(1.1);
+}
+
+.social p i{
+  margin-right: 8px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.social p {
+  text-align: left;
+}
+
+.infoProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Khoảng cách giữa các mục */
+}
+
+.infoProfile {
+
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-item h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.info-item p {
+  font-size: 1rem;
+  color: #555;
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 0px 10px 10px 0px;
+  width: 400px;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.info-item .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: #838383;
+  background-color: #e3e3e3;
+  padding: 12px;
+  border-radius: 10px 0px 0px 10px;
+
+}
+
+.content-info{
+  width: 45%;
+}
+
+

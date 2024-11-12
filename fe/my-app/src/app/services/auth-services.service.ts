@@ -22,6 +22,7 @@ export class AuthServicesService {
   constructor(private http: HttpClient) { }
 
 
+
   claimPassword(codeConfirm: string): Observable<any>{
     return this.http.get<any>(`${this.successCode}?codeCofirm=${codeConfirm}`)
   }

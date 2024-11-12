@@ -1,0 +1,20 @@
+<p>session works!</p>
+<circle-progress
+  [percent]="completionPercent"
+  [outerStrokeColor]="completionPercent === 100 ? '#32CD32' : '#78C000'"
+  [outerStrokeWidth]="8"
+  [innerStrokeWidth]="4"
+  [animation]="true"
+  [animationDuration]="300">
+</circle-progress>
+<div *ngFor="let item of sessions; let i = index">
+  <div class="session-item">
+    <h1>dfdf</h1>
+    <h1>{{item.session_no}}</h1>
+    <input
+      placeholder="ok"
+      type="checkbox"
+      (change)="updateCompletion(item.id)" />
+    <label >Complete</label>
+  </div>
+</div>

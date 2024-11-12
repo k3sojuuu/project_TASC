@@ -26,7 +26,7 @@ public class AppConfig {
     @Bean
     public CorsWebFilter filter(){
         org.springframework.web.cors.CorsConfiguration config= new CorsConfiguration();
-        config.setAllowCredentials(false); //updated to false
+        config.setAllowCredentials(false);
         config.setAllowedOrigins(Arrays.asList("*","*"));
         config.addExposedHeader("Authorization");
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
@@ -38,4 +38,7 @@ public class AppConfig {
         source.registerCorsConfiguration("/api/**", config);
         return new CorsWebFilter(source);
     }
+    //Cấu hình chi tiết cho CORS, cho phép yêu cầu từ mọi nguồn,
+    // với các phương thức HTTP và header được chỉ định,
+    // đồng thời cấu hình thời gian cache cho các kết quả CORS.
 }

@@ -1,0 +1,32 @@
+.subpage{
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(236, 255, 209));
+  margin-bottom: 10px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+
+
+.subpage:hover{
+  background-color: rgb(233, 255, 134);
+  transform: scale(1.1);
+}
+
+.active {
+  background-image: linear-gradient(to bottom, rgb(241, 252, 194), rgb(232, 255, 115));
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.main-sidebar {
+  width: 250px; /* Chiều rộng sidebar */
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Chiều cao của sidebar bằng với chiều cao viewport */
+  background-image: url('/assets/img/profileImg/sideBarImg.png'); /* Đường dẫn tới ảnh nền */
+  background-size: cover; /* Đảm bảo ảnh nền phủ đầy phần tử */
+  background-position: center; /* Căn giữa ảnh nền */
+  background-repeat: no-repeat; /* Ngừng lặp ảnh nền */
+}
+
+

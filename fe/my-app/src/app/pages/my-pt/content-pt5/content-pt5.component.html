@@ -1,1 +1,19 @@
-<p>content-pt5 works!</p>
+<circle-progress
+  [percent]="completionPercent"
+  [outerStrokeColor]="completionPercent === 100 ? '#32CD32' : '#78C000'"
+  [outerStrokeWidth]="8"
+  [innerStrokeWidth]="4"
+  [animation]="true"
+  [animationDuration]="300">
+</circle-progress>
+
+<!-- Checkbox cho các mục tiêu -->
+<div *ngFor="let goal of goals; let i = index; trackBy: trackByIndex">
+  <input
+    placeholder="ok"
+    type="checkbox"
+    [id]="'goal' + i"
+    [(ngModel)]="goals[i]"
+    (change)="updateCompletion()" />
+  <label [for]="'goal' + i">Mục tiêu {{ i + 1 }}</label>
+</div>

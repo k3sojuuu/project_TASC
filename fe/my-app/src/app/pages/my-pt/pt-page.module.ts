@@ -1,5 +1,6 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PayOrderComponent } from './pay-order/pay-order.component';
 
 
 
@@ -7,6 +8,8 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
 
+  
+    PayOrderComponent
   ],
   imports: [
     CommonModule

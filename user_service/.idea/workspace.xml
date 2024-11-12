@@ -5,37 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443866c9-4aeb-4aca-af5b-4e1a12e4c576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/implement/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/java/com/example/user_service/service/implement/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../be/user_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../be/user_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../be/coarch-service/src/main/java/com/example/productservice/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../be/coarch-service/src/main/java/com/example/productservice/controller/CourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/layout/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/about-us/about-us.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/about-us/about-us.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content1/content1.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/content2/content2.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/home-pages/home-pages.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/logins/logins.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/about-us/about-us.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/content-pt2/content-pt2.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/content-pt2/content-pt2.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/content-pt2/content-pt2.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/content-pt4/content-pt4.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/content-pt4/content-pt4.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/pt-page.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/pages/my-pt/pt-page.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/my-app/src/app/services/auth-services.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/my-app/src/app/services/auth-services.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +101,7 @@
       <workItem from="1729757782470" duration="894000" />
       <workItem from="1730252976391" duration="110000" />
       <workItem from="1730771901144" duration="513000" />
+      <workItem from="1731065992817" duration="30000" />
     </task>
     <servers />
   </component>

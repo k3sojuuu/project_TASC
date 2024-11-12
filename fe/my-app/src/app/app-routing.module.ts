@@ -10,6 +10,12 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { AuthGuard } from './pages/auth/auth.guard';
 import { ConfirmPasswordComponent } from './pages/auth/confirm-password/confirm-password.component';
+import { PayOrderComponent } from './pages/my-pt/pay-order/pay-order.component';
+import { Subpage1Component } from './pages/profile/subpage1/subpage1.component';
+import { Subpage2Component } from './pages/profile/subpage2/subpage2.component';
+import { Subpage3Component } from './pages/profile/subpage3/subpage3.component';
+import { Subpage4Component } from './pages/profile/subpage4/subpage4.component';
+import { SessionComponent } from './pages/profile/subpage2/session/session.component';
 
 const routes: Routes = [
   {
@@ -35,7 +41,31 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    children:[
+      {
+        path: 'subpage1',
+        component: Subpage1Component
+      },
+      {
+        path: 'subpage2',
+        component: Subpage2Component,
+        children:[
+          {
+            path: 'session',
+            component: SessionComponent
+          }
+        ]
+      },
+      {
+        path: 'subpage3',
+        component: Subpage3Component
+      },
+      {
+        path: 'subpage4',
+        component: Subpage4Component
+      }
+    ]
   },
   {
     path: 'register',
@@ -48,6 +78,10 @@ const routes: Routes = [
   {
     path: 'confirm-code',
     component: ConfirmPasswordComponent
+  },
+  {
+    path:  'my-pt/pay-order',
+    component: PayOrderComponent
   }
 ];
 

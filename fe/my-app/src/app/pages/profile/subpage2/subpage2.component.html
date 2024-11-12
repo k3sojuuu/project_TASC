@@ -1,0 +1,22 @@
+
+<div>
+  <h2>My course</h2>
+  <div>
+      <div *ngIf="myCourse.length === 0">
+        <div class="notice-course">
+          <img src="/assets/img/profileImg/notice.png" alt="sfd">
+           <h1>Opps!!!You don't have any courses yet</h1>
+           <button (click)="redirect()">Find a course now</button>
+        </div>
+      </div>
+      <div *ngIf="myCourse.length != 0">
+        <div *ngFor="let item of myCourse">
+          <div class="course-item">
+             <h1>{{item.id}}</h1>
+             <button [routerLink]="['session']" (click)="viewSession(item.id)">View Schedules</button>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>

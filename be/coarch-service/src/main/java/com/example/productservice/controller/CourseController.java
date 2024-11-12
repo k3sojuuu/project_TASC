@@ -1,5 +1,6 @@
 package com.example.productservice.controller;
 
+import com.example.productservice.model.dto.request.BuySuccessDTO;
 import com.example.productservice.model.entity.Course;
 import com.example.productservice.service.CourseService;
 import com.example.productservice.service.impl.CourseServiceImpl;
@@ -18,7 +19,7 @@ public class CourseController {
                                           @RequestParam Integer size){
         return courseService.getAllCourse(page,size);
     }
-    @PostMapping("/getCourseFilter")
+    @GetMapping("/getCourseFilter")
     ResponseEntity<?> getCourseByType(@RequestParam String type){
         return ResponseEntity.ok(courseService.getCourseByType(type));
     }
@@ -26,5 +27,10 @@ public class CourseController {
     @PostMapping("/createCourseOnline")
     ResponseEntity<?> createCourseOnline(@RequestBody Course course){
         return ResponseEntity.ok(courseService.createCourse(course));
+    }
+
+    @PostMapping("/buySuccesCourse")
+    ResponseEntity<?> buySuccess(@RequestBody BuySuccessDTO successDTO){
+        return null;
     }
 }

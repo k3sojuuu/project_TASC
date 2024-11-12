@@ -33,4 +33,7 @@ public class Users {
     @Column(name = "img_id")
     private Long imgId;
     private Integer gender;
+    private String description;
+    @Column(name = "date_birth")
+    private String dateOfBirth;
 }

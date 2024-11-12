@@ -1,0 +1,119 @@
+<div class="background-container" [style.backgroundImage]="backgroundSelector">
+  <div class="main-content">
+    <div class="courseInfo" (mouseleave)="leaveGym()" (mouseenter)="gymBackground()">
+      <div class="background-img" style="background-image: url('/assets/img/PtPage/course1.png');">
+        <div *ngIf="hideButtonGym">
+          <button (click)="GymClick()">Get Course</button>
+        </div>
+      </div>
+      <h1>ABOUT GYM</h1>
+    </div>
+    <div class="courseInfo" (mouseleave)="leavePilates()" (mouseenter)="pilatesBackground() ">
+      <div class="background-img" style="background-image: url('/assets/img/PtPage/course3.png');">
+        <div class="filter"></div>
+        <div *ngIf="hideButtonPilates">
+          <button (click)="PilatesClick()">Get Course</button>
+        </div>
+      </div>
+      <h1>ABOUT PILATES</h1>
+    </div>
+    <div class="courseInfo" (mouseleave)="leaveYoga()" (mouseenter)="yogaBackground()">
+      <div class="background-img" style="background-image: url('/assets/img/PtPage/course22.png');">
+        <div *ngIf="hideButtonYoga">
+          <button (click)="YogaClick()">Get Course</button>
+        </div>
+      </div>
+      <h1>ABOUT YOGA</h1>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="statusGym" class="list-pt">
+  <label for="">Find course</label>
+  <input type="text" placeholder="ok">
+  <div class="container mt-5">
+    <div class="row">
+      <div *ngFor="let course of courses" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card">
+          <div class="card-img" [ngStyle]="{ 'background-image': 'url(/assets/img/PtPage/course1.png)' }">
+            <div class="overlay">
+              <button (click)="openPopup(course)">View Detail</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title">{{ course.nameCoarch }}</h1>
+            <p class="card-text">{{ course.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="statusPilates" class="list-pt">
+  <label for="">Find course</label>
+  <input type="text" placeholder="ok">
+  <div class="container mt-5">
+    <div class="row">
+      <div *ngFor="let course of courses" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card">
+          <div class="card-img" [ngStyle]="{ 'background-image': 'url(/assets/img/PtPage/course1.png)' }">
+            <div class="overlay">
+              <button (click)="openPopup(course)">View Detail</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title">{{ course.nameCoarch }}</h1>
+            <p class="card-text">{{ course.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="statusYoga" class="list-pt">
+  <label for="">Find course</label>
+  <input type="text" placeholder="ok">
+  <div class="container mt-5">
+    <div class="row">
+      <div *ngFor="let course of courses" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card">
+          <div class="card-img" [ngStyle]="{ 'background-image': 'url(/assets/img/PtPage/course1.png)' }">
+            <div class="overlay">
+              <button (click)="openPopup(course)">View Detail</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title">{{ course.nameCoarch }}</h1>
+            <p class="card-text">{{ course.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div [ngClass]="{'popup-overlay': true, 'show': isPopupVisible}" (click)="closePopup()" data-aos="fade-up">
+  <button class="close-btn" (click)="closePopup()">X</button>
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <div class="popup-img">
+      <img src="/assets/img/PtPage/course1.png" class="card-img-top" alt="Course Image">
+    </div>
+
+    <div class="info-order">
+    <h2>{{ selectedCourse?.nameCoarch }}</h2>
+    <p><strong>COURSE INSTRUCTOR:</strong> Christian</p>
+    <p><strong>TYPE COURSE:</strong>Gyms</p>
+    <p><strong>PRICE:</strong> {{ selectedCourse?.price | currency }}</p>
+    <p> ✔ Total number of training sessions 20000000000</p>
+    <p> ✔ Exercises for each session</p>
+    <p> ✔ Nutritional consulting</p>
+    <p style="font-style: italic;">Description: {{ selectedCourse?.description}}</p>
+    <p></p>
+      <button class="buy-button" (click)="buyNow()">Buy Now</button>
+  </div>
+  </div>
+</div>

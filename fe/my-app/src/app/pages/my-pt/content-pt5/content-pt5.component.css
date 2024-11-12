@@ -1,0 +1,7 @@
+.check-box{
+  display: flex;
+}
+
+.child{
+margin: 20px;
+}

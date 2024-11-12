@@ -27,12 +27,18 @@ import { CalculatorFatComponent } from './pages/home-pages/calculator-fat/calcul
 import { Content3Component } from './pages/home-pages/content3/content3.component';
 import { FeedbackHomePageComponent } from './pages/home-pages/feedback-home-page/feedback-home-page.component';
 import { ContentPt1Component } from './pages/my-pt/content-pt1/content-pt1.component';
-import { ContentPt2Component } from './pages/my-pt/content-pt2/content-pt2.component';
+import { ContentPt2Component } from './pages/my-pt/course-online-pt2/content-pt2.component';
 import { ContentPt3Component } from './pages/my-pt/content-pt3/content-pt3.component';
 import { ContentPt4Component } from './pages/my-pt/content-pt4/content-pt4.component';
 import { ContentPt5Component } from './pages/my-pt/content-pt5/content-pt5.component';
 import { PtPageModule } from './pages/my-pt/pt-page.module';
 import { SlideHomePageComponent } from './pages/home-pages/slide-home-page/slide-home-page.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { Subpage1Component } from './pages/profile/subpage1/subpage1.component';
+import { Subpage2Component } from './pages/profile/subpage2/subpage2.component';
+import { Subpage3Component } from './pages/profile/subpage3/subpage3.component';
+import { Subpage4Component } from './pages/profile/subpage4/subpage4.component';
+import { SessionComponent } from './pages/profile/subpage2/session/session.component';
 
 
 
@@ -61,7 +67,12 @@ import { SlideHomePageComponent } from './pages/home-pages/slide-home-page/slide
     ContentPt3Component,
     ContentPt4Component,
     ContentPt5Component,
-    SlideHomePageComponent
+    SlideHomePageComponent,
+    Subpage1Component,
+    Subpage2Component,
+    Subpage3Component,
+    Subpage4Component,
+    SessionComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +82,15 @@ import { SlideHomePageComponent } from './pages/home-pages/slide-home-page/slide
     ReactiveFormsModule,
     HomePagesModule,
     FontAwesomeModule,
-    PtPageModule
+    PtPageModule,
+    NgCircleProgressModule.forRoot({
+      radius: 50,
+      outerStrokeWidth: 8,
+      innerStrokeWidth: 4,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }),
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
