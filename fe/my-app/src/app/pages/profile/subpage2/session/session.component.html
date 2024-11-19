@@ -1,20 +1,45 @@
-<p>session works!</p>
-<circle-progress
-  [percent]="completionPercent"
-  [outerStrokeColor]="completionPercent === 100 ? '#32CD32' : '#78C000'"
-  [outerStrokeWidth]="8"
-  [innerStrokeWidth]="4"
-  [animation]="true"
-  [animationDuration]="300">
-</circle-progress>
-<div *ngFor="let item of sessions; let i = index">
-  <div class="session-item">
-    <h1>dfdf</h1>
-    <h1>{{item.session_no}}</h1>
-    <input
-      placeholder="ok"
-      type="checkbox"
-      (change)="updateCompletion(item.id)" />
-    <label >Complete</label>
+<div class="main-container">
+<div class="progress-main">
+  <div >
+    <circle-progress
+    [percent]="completionPercent"
+    [outerStrokeColor]="completionPercent === 100 ? '#32CD32' : '#78C000'"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="4"
+    [animation]="true"
+    [animationDuration]="300">
+  </circle-progress>
   </div>
+  <div class="pro-h2">
+    <h2>Training course progress</h2>
+    <button><img src="/assets/img/profileImg/eye.png" alt="">View course</button>
+</div>
+</div>
+<div class="container">
+
+  <div class="row">
+    <div *ngFor="let item of sessions; let i = index" class="col-sm-3" >
+  <div class="session-item">
+    <div>
+      <h1>{{item.sessionName}}</h1>
+      <p>{{item.startAt}}</p>
+      <div *ngIf="item.statusSessions != 2" class="confirm">
+        <input
+           placeholder="ok"
+           type="checkbox"
+          (change)="updateCompletion(item.id)"  />
+      <label >Confirm</label>
+      </div>
+      <div *ngIf="item.statusSessions == 2" class="complete">
+         <img src="/assets/img/profileImg/complete.png" alt="">
+         <h3>Complete</h3>
+      </div>
+      <button class="exercise-button" [routerLink]="['session']" (click)="viewExercise(item.id)">Exercise</button>
+    </div>
+     <h5 class="session-no">{{item.session_no}}</h5>
+  </div>
+</div>
+
+  </div>
+</div>
 </div>

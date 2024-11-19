@@ -1,0 +1,22 @@
+<div class="main-pt">
+<div class="main-container">
+  <div>
+  <nav>
+    <ul class="routing">
+      <li class="router-button">
+        <a [routerLink]="['managementPt']"><img src="/assets/imgPage/img11.png" alt="">Management</a>
+      </li>
+      <li class="router-button">
+        <a [routerLink]="['report']" ><img src="/assets/imgPage/img22.png" alt="">Report PT</a>
+      </li>
+      <li class="router-button">
+        <a [routerLink]="['approval']" ><img src="/assets/imgPage/img33.png" alt="">Approval</a>
+      </li>
+    </ul>
+   </nav>
+  </div>
+</div>
+  <div class="router-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

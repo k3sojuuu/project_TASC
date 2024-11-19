@@ -1,0 +1,59 @@
+.exercise-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Khoảng cách giữa các bài tập */
+  padding: 20px;
+}
+
+video{
+  height: 200px;
+  width: 300px;
+}
+/* Mỗi exercise item */
+.exercise-item {
+  width: 80%;
+  border: 1px solid #ccc; /* Đường viền nhẹ */
+  border-radius: 0px 38px 38px 38px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Căn giữa */
+}
+
+/* Tiêu đề bài tập */
+.exercise-item p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Video */
+video {
+  width: 300px;  /* Đảm bảo video chiếm hết chiều rộng container */  /* Giới hạn kích thước tối đa của video */
+  border-radius: 8px;  /* Đường viền bo tròn */
+  margin-top: 10px;
+  background-color: #000;
+}
+
+/* Khi không có bài tập */
+.no-exercise {
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.complete{
+  display: flex;
+}
+
+.complete img{
+  width: 40px;
+  height: 40px;
+}
+
+.complete h3{
+  color: #8a8a8a;
+  font-size: 35px;
+}

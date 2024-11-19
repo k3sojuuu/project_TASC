@@ -43,8 +43,10 @@ export class ContentPt2Component implements OnInit{
   courses: any;
   selectedType: string = '';
 
-  buyNow(){
-    this.router.navigate(['/my-pt/pay-order']);
+  buyNow(selectedCourse: any) {
+    this.router.navigate(['/my-pt/pay-order'], {
+      state: { selectedCourse: selectedCourse }
+    });
   }
 
   getCourseByType(typeCourses: string): void{
@@ -63,6 +65,7 @@ export class ContentPt2Component implements OnInit{
   openPopup(course: any): void {
     this.selectedCourse = course;  // Chọn sản phẩm khi nhấn vào "View Detail"
     this.isPopupVisible = true;     // Hiển thị popup
+    console.log("Selected course is:", this.selectedCourse)
   }
 
   closePopup(): void {
@@ -115,5 +118,7 @@ PilatesClick() {
     }
 }
 
-
+viewPt(){
+  alert("okokok")
+}
 }

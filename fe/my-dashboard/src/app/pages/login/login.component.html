@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="login-container">
+    <div class="left-section">
+      <h1>Admin Dashboard</h1>
+      <p>MyPt's management system</p>
+    </div>
+    <div class="form-section">
+      <h2>Login</h2>
+      <form (ngSubmit)="onLogin()">
+        <label for="username">Username:</label>
+        <div class="input-form">
+          <fa-icon [icon]="faUser" class="icon"></fa-icon>
+          <input type="text" id="username" [(ngModel)]="username" name="username" placeholder="Enter your username" required />
+        </div>
+
+        <label for="password">Password:</label>
+        <div class="input-form">
+          <fa-icon [icon]="faLock" class="icon"></fa-icon>
+          <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

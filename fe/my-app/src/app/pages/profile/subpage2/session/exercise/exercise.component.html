@@ -1,0 +1,51 @@
+
+
+
+<div>
+  <button (click)="goBack()">Back</button>
+</div>
+<div>
+  <button>Report</button>
+</div>
+<!-- <circle-progress
+[percent]="completionPercent"
+[outerStrokeColor]="completionPercent === 100 ? '#32CD32' : '#78C000'"
+[outerStrokeWidth]="8"
+[innerStrokeWidth]="4"
+[animation]="true"
+[animationDuration]="300">
+</circle-progress> -->
+<div *ngIf="exercise && exercise.length > 0" class="exercise-container">
+  <div *ngFor="let ex of exercise;let i = index; trackBy: trackByIndex" class="exercise-item">
+    <div *ngIf="ex.status != 2">
+      <input
+        placeholder="ok"
+        type="checkbox"
+        [id]="'goal' + i"
+        [(ngModel)]="goals[i]"
+        (change)="updateCompletion(ex.id)" />
+      <label [for]="'goal' + i">Goals {{ i + 1 }}</label>
+    </div>
+    <div *ngIf="ex.status == 2" class="complete">
+      <img src="/assets/img/profileImg/complete.png" alt="">
+      <h3>Complete</h3>
+   </div>
+    <h2>Exercise Name: {{ ex.exerciseName }}</h2>
+    <h2>Number of sets: {{ex.exeSet}}</h2>
+    <h2>Number rep/set: {{ex.exeRep}}</h2>
+    <p>Description: {{ex.descriptions}}</p>
+    <div>
+    <p>Instructional videos:</p>
+    <video *ngIf="ex.videoPath" controls>
+      <source [src]="ex.videoPath" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div>
+  </div>
+  <div>
+    <h2>Post-workout nutrition</h2>
+  </div>
+</div>
+<div *ngIf="!exercise || exercise.length === 0" class="no-exercise">
+  <p>Không có bài tập nào.</p>
+</div>

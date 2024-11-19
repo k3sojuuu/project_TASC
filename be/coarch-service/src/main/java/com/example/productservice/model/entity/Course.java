@@ -23,11 +23,14 @@ public class Course {
     private Long ptId;
     private String type;
     private Float price;
+    @Column(name = "pt_course_name")
+    private String ptCourseName;
     private String description;
     @Column(name = "number_session")
     private Long numberSession;
     private String img;
     @Column(name = "name_course")
     private String nameCoarch;
+    private Long quantity;
     private String createAt;
 }

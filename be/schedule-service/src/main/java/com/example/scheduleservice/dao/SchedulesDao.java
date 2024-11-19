@@ -47,8 +47,8 @@ public class SchedulesDao {
 
 
     public Long setExercise(Exercise exercise){
-        String query = "insert into exercise(session_id,exercise_name,exe_set,exe_rep,descriptions,status)" +
-                "values(?,?,?,?,?,1)";
+        String query = "insert into exercise(session_id,exercise_name,exe_set,exe_rep,descriptions,status,video_path)" +
+                "values(?,?,?,?,?,1,?)";
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
@@ -58,6 +58,7 @@ public class SchedulesDao {
                 statement.setLong(3,exercise.getExeSet());
                 statement.setLong(4,exercise.getExeRep());
                 statement.setString(5,exercise.getDescriptions());
+                statement.setString(6,exercise.getVideoPath());
                 return statement;
             }
         },holder);

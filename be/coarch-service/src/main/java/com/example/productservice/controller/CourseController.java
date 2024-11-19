@@ -14,6 +14,12 @@ public class CourseController {
     @Autowired
     private CourseServiceImpl courseService;
 
+    @GetMapping( "/hello")
+    public ResponseEntity<?> getHello(){
+        String hello = "Hello World";
+        return ResponseEntity.ok(hello);
+    }
+
     @GetMapping("/getAllCourse")
     public ResponseEntity<?> getAllCourse(@RequestParam Integer page,
                                           @RequestParam Integer size){

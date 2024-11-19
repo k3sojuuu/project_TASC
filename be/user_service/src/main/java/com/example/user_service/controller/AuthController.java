@@ -6,9 +6,12 @@ import com.example.user_service.model.DTO.request.FormLogin;
 import com.example.user_service.model.DTO.request.FormReg;
 import com.example.user_service.security.JwtProvider;
 import com.example.user_service.service.implement.AuthServiceImpl;
+import com.example.user_service.service.implement.UserServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +20,8 @@ public class AuthController {
 
     @Autowired
     private AuthServiceImpl authService;
+    @Autowired
+    private UserServiceImpl userService;
     @Autowired
     private JwtProvider jwtProvider;
     @Autowired
@@ -28,7 +33,12 @@ public class AuthController {
 
     @PostMapping("/register")
     @CrossOrigin(origins = "http://localhost:4200")
-    ResponseEntity<?> registry(@RequestBody FormReg formReg){return authService.save(formReg);}
+    ResponseEntity<?> registry(@RequestBody @Valid FormReg formReg, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return ResponseEntity.status(400).body("Input Invalid");
+        }
+        return authService.save(formReg);
+    }
 
     @PostMapping("/login")
     ResponseEntity<?> login(@RequestBody FormLogin formLogin){
@@ -60,4 +70,6 @@ public class AuthController {
     ResponseEntity<?> claimsPass(@RequestParam String codeCofirm){
         return ResponseEntity.ok(authService.claimsPassword(codeCofirm));
     }
+
+
 }

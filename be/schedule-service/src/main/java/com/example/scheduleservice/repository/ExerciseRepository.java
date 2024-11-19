@@ -19,6 +19,6 @@ public interface ExerciseRepository extends JpaRepository<Exercise,Long> {
     @Query(value = "UPDATE exercise SET status = 2 WHERE id = :exerciseId", nativeQuery = true)
     int updateStatusByExerciseId(@Param("exerciseId") Long exerciseId);
 
-    @Query(value = "SELECT COUNT(*) FROM exercise WHERE status = 2", nativeQuery = true)
-    Long countExercisesCompleted();
+    @Query(value = "SELECT COUNT(*) FROM exercise WHERE status = 2 and session_id =:sessionId", nativeQuery = true)
+    Long countExercisesCompleted(@Param("sessionId")Long sessionId);
 }

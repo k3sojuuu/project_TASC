@@ -27,11 +27,10 @@ public class Users {
     private String password;
     private Date create_at;
     private Integer age;
-    @Column(name = "certification_id")
-    private Long certificationId;
+       //foreign table c
+    @Column(name = "")
     private Integer video_id;
-    @Column(name = "img_id")
-    private Long imgId;
+       //foreignKey table user;
     private Integer gender;
     private String description;
     @Column(name = "date_birth")

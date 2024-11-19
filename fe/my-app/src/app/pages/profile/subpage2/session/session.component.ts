@@ -10,7 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SessionComponent implements OnInit{
 
  constructor(private ProfileService:ProfileServiceService
-            ,private route: ActivatedRoute){}
+            ,private route: ActivatedRoute,
+            private router:Router){}
 
 
   goals: boolean[] = [];
@@ -36,6 +37,7 @@ export class SessionComponent implements OnInit{
       }
     });
   }
+
   setCompleteSession(sessionId:number){
     this.ProfileService.completeSessions(sessionId).subscribe(
       (res : any) => {
@@ -45,8 +47,6 @@ export class SessionComponent implements OnInit{
         console.error("Lỗi khi lấy sessions:", error);
       }
     )
-
-
   }
 
   getTotalSessionInSchedule(scheduleId: number,userId: number){
@@ -95,4 +95,10 @@ export class SessionComponent implements OnInit{
     this.setCompleteSession(sessionId);
   }
 
+  viewExercise(sessionId:number): void{
+    console.log("Redirecting to session with sessionId:", sessionId);
+    this.router.navigate(['/profile/subpage2/session/exercise'], {
+      queryParams: { sessionId: sessionId }
+    });
+  }
 }

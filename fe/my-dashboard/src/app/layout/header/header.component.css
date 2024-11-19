@@ -1,0 +1,61 @@
+.main-container{
+  font-family: "Gilroy", Sans-serif;
+}
+div {
+  margin: 0;
+}
+
+/* Cố định thanh điều hướng ở trên cùng của trang */
+nav {
+  background-color: #000000; /* Màu nền tối */
+  color: white; /* Màu chữ trắng */
+  padding: 10px 20px; /* Padding xung quanh */
+  position: fixed; /* Cố định vị trí */
+  top: 0; /* Đặt nó ở trên cùng */
+  left: 0; /* Đặt nó ở bên trái */
+  width: 100%; /* Đặt chiều rộng của thanh header chiếm toàn bộ trang */
+  z-index: 1000; /* Đảm bảo thanh header nằm trên các phần tử khác */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng mờ cho thanh header */
+  
+}
+
+/* Đặt kiểu cho danh sách trong nav */
+ul {
+  list-style-type: none; /* Xóa dấu chấm (bullet) mặc định */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Dùng flex để các mục nằm ngang */
+}
+
+/* Kiểu cho các mục trong danh sách (li) */
+li {
+  margin-right: 20px; /* Khoảng cách giữa các mục */
+}
+
+/* Kiểu cho các liên kết (a) */
+a {
+  color: #fff; /* Màu chữ trắng */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-size: 16px;
+  display: block;
+  padding: 8px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng hover khi di chuột vào liên kết */
+a:hover {
+  background-color: #000000; /* Màu nền thay đổi khi hover */
+  color: #fff; /* Màu chữ vẫn trắng */
+}
+
+/* Hiệu ứng cho liên kết đang được chọn (active) */
+a.active {
+  background-color: #007bff; /* Màu nền khi liên kết được chọn */
+  color: white; /* Màu chữ trắng */
+}
+
+/* Thêm padding cho nội dung dưới thanh header để tránh bị che khuất */
+body {
+  padding-top: 60px; /* Tạo khoảng cách cho phần nội dung không bị che khuất bởi thanh header */
+}

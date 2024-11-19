@@ -39,6 +39,7 @@ import { Subpage2Component } from './pages/profile/subpage2/subpage2.component';
 import { Subpage3Component } from './pages/profile/subpage3/subpage3.component';
 import { Subpage4Component } from './pages/profile/subpage4/subpage4.component';
 import { SessionComponent } from './pages/profile/subpage2/session/session.component';
+import { ExerciseComponent } from './pages/profile/subpage2/session/exercise/exercise.component';
 
 
 
@@ -72,7 +73,8 @@ import { SessionComponent } from './pages/profile/subpage2/session/session.compo
     Subpage2Component,
     Subpage3Component,
     Subpage4Component,
-    SessionComponent
+    SessionComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,

@@ -15,11 +15,26 @@ export class ProfileServiceService {
   private getCountSessionComplete = "http://localhost:8085/sv4/schedules/getCountSessionComplete"
   private getTotalSession = "http://localhost:8085/sv4/schedules/getTotalSessionByScheduleIdAndUserId"
   private completeSession = "http://localhost:8085/sv4/schedules/setCompleteSession"
+  private completeExercise = "http://localhost:8085/sv4/schedules/setCompleteExercise"
+  private getExerciseBySessionId = "http://localhost:8085/sv4/schedules/getExerciseBySessionId"
+  private getExerciseComplete = "http://localhost:8085/sv4/schedules/getCountExerciseComplete"
 
   constructor(private http: HttpClient) { }
 
+  getExeComplete(sessionId: number){
+    return this.http.get<any>(`${this.getExeComplete}?sessionId=${sessionId}`)
+  }
+
+  getExercise(sessionId: number){
+    return this.http.get<any>(`${this.getExerciseBySessionId}?sessionId=${sessionId}`)
+  }
+
   completeSessions(sessionId: number){
     return this.http.put<any>(`${this.completeSession}?sessionId=${sessionId}`, sessionId)
+  }
+
+  completeExercises(exerciseId: number){
+    return this.http.put<any>(`${this.completeExercise}?exerciseId=${exerciseId}`,exerciseId)
   }
 
   getTotalSessionInSchedule(scheduleId: number,userId:number){

@@ -26,5 +26,7 @@ public class Exercise {
     private Long exeRep;
     private String descriptions;
     private Long status;
+    @Column(name ="video_path")
+    private String videoPath;
 }
 

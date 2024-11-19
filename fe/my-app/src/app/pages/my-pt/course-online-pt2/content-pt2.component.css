@@ -174,9 +174,13 @@ button:hover{
 
 /* Nội dung Popup */
 .popup-content {
-  width: 60%;
+  color: aliceblue;
+  width: 50%;
   height: 70vh;
-  background-color: white;
+  background-image: url('/assets/img/profileImg/background-card.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 20px;
   padding: 20px;
   overflow-y: auto;
