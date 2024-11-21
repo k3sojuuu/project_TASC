@@ -4,6 +4,7 @@ import com.example.productservice.dao.mapper.CourseMapper;
 import com.example.productservice.dao.statement.interfaces.CourseDao;
 import com.example.productservice.model.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -56,6 +57,16 @@ public class CourseDaoImpl implements CourseDao {
         },holder);
         Long key = holder.getKey().longValue();
         return key;
+    }
+
+    public Course getCourseById(Long courseId) {
+        String sql = "SELECT * FROM Course WHERE id = ?";
+        return jdbcTemplate.queryForObject(sql,new  CourseMapper().getCourseMap(), courseId);
+    }
+
+    public int updateCourseQuantity(Long courseId, int quantity) {
+        String sql = "UPDATE Course SET quantity = quantity - ? WHERE id = ? AND quantity >= ?";
+        return jdbcTemplate.update(sql, quantity, courseId, quantity);
     }
 
 

@@ -18,6 +18,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -197,6 +199,18 @@ public class SchedulesServiceImpl implements SchedulesService {
         }else {
             return ResponseEntity.status(404).body("not found");
         }
+    }
+
+    @Override
+    public ResponseEntity<?> CreateSchedules(Schedules schedules) {
+        Schedules create = Schedules.builder()
+                .uid(schedules.getUid())
+                .ptId(schedules.getPtId())
+                .startAt(new Date())
+                .sessionNumber(schedules.getSessionNumber())
+                .schedulesType()
+                .build();
+        return null;
     }
 
     @Override

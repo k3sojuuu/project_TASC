@@ -4,6 +4,7 @@ import com.example.order_service.model.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -21,5 +22,13 @@ public interface OrderStoreProcedure extends JpaRepository<Order,Long> {
                      @Param("totalPrice")Float totalPrice,
                      @Param("status")String status,
                      @Param("createAt") LocalDateTime createAt);
+    @Procedure(name = "successOrder")
+    void successOrder(@Param("orderId")Long orderId,
+                      @Param("newStatus")String status,
+                      @Param("updateTime")LocalDateTime updateTime);
+
+    @Procedure(name = "falseOrder")
+    Integer falseOrder(@Param("orderId")Long orderId,
+                       @Param("newStatus")String status);
 
 }

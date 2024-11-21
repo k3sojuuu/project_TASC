@@ -21,7 +21,6 @@ public class AuthenFilter extends AbstractGatewayFilterFactory<AuthenFilter.Conf
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) ->
         {
-
             if (exchange.getRequest().getURI().getPath().contains("/private/")) {
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
                     exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);

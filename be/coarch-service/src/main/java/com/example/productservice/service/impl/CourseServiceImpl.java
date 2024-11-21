@@ -1,27 +1,32 @@
 package com.example.productservice.service.impl;
 
+import com.example.productservice.constan.OrderStatus;
 import com.example.productservice.dao.statement.CourseDaoImpl;
-import com.example.productservice.model.dto.CourseDetailDTO;
-import com.example.productservice.model.dto.Users;
+import com.example.productservice.model.MyRespone;
 import com.example.productservice.model.dto.request.BuySuccessDTO;
+import com.example.productservice.model.dto.request.OrderUpdate;
 import com.example.productservice.model.dto.response.ResponseCourseSort;
 import com.example.productservice.model.entity.Course;
+import com.example.productservice.repository.OrderClient;
+import com.example.productservice.repository.PaymentClient;
 import com.example.productservice.service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
-    @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
-    private CourseDaoImpl courseDao;
+
+    private final RestTemplate restTemplate;
+    private final CourseDaoImpl courseDao;
+    private final OrderClient orderClient;
+
+
 
     public ResponseEntity<?> getAllCourse(int page, int size) {
         List<Course> courses = courseDao.getAllCourse(page, size);
@@ -48,38 +53,16 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseDetailDTO> getCourseByType(String type) {
+    public List<Course> getCourseByType(String type) {
         List<Course> list = courseDao.getCourseByType(type);
-        List<CourseDetailDTO> courseDetailDTOS = new ArrayList<>();
-        for (Course res : list) {
-            String url = "http://localhost:8000/api/sv1/user/getUser?userId=" + res.getPtId();
-            Users user = null;
-            try {
-                user = restTemplate.getForObject(url, Users.class);
-            } catch (Exception e) {
-                user = new Users();
-                user.setFirstName("Unknown");
-                user.setLastName("");
-            }
-            CourseDetailDTO course = CourseDetailDTO.builder()
-                    .ptName(user.getFirstName() + " " + user.getLastName())
-                    .nameCoarch(res.getNameCoarch())
-                    .numberSession(res.getNumberSession())
-                    .description(res.getDescription())
-                    .img(res.getImg())
-                    .price(res.getPrice())
-                    .type(res.getType())
-                    .build();
-            courseDetailDTOS.add(course);
-        }
-        return courseDetailDTOS;
+        return list;
     }
 
     @Override
     public ResponseEntity<?> buySuccess(BuySuccessDTO buySuccessDTO) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            String url = "http://localhost:8080/api/your-endpoint";
+            String url = "http://localhost:8080/api/";
             BuySuccessDTO request = BuySuccessDTO.builder()
                     .userId(buySuccessDTO.getUserId())
                     .ptId(buySuccessDTO.getPtId())
@@ -103,6 +86,39 @@ public class CourseServiceImpl implements CourseService {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("An error occurred while processing your request: " + e.getMessage());
         }
+    }
+
+    @Override
+    public MyRespone checkAndReduceStock(Long courseId,Long orderId) {
+        MyRespone myRespone = new MyRespone();
+        try {
+            Course course = courseDao.getCourseById(courseId);
+            if(course == null){
+                myRespone.setStatus(404);
+                myRespone.setMessage("Course not found");
+                myRespone.setData(null);
+                return myRespone;
+            }
+            int updateRows = courseDao.updateCourseQuantity(courseId,1);
+            if (updateRows > 0){
+                OrderUpdate orderUpdate = OrderUpdate.builder().orderId(orderId)
+                                         .status(OrderStatus.SUCCESS).build();
+                orderClient.successOrder(orderUpdate);
+                myRespone.setStatus(200);
+                myRespone.setMessage("Stock reduced successfully");
+                myRespone.setData(course);
+            }else {
+                myRespone.setStatus(400);
+                myRespone.setMessage("Not enough stock");
+                myRespone.setData(null);
+
+            }
+        }catch (Exception e){
+            myRespone.setStatus(500);
+            myRespone.setMessage("Internal server error:" + e.getMessage());
+            myRespone.setData(null);
+        }
+        return myRespone;
     }
 
 

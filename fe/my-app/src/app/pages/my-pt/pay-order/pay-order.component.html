@@ -6,24 +6,76 @@
   <div class="main-check-out">
        <div class="customer">
            <h1>Infomation customer</h1>
-           <p>content</p>
+           <div>
+              <h1>Username</h1>
+              <p>{{userProfile.firstName}} {{userProfile.lastName}}</p>
+           </div>
+           <div>
+              <h1>Email</h1>
+              <p>{{userProfile.email}}</p>
+           </div>
+           <div>
+              <h1>Phone Number</h1>
+              <p>{{userProfile.phone_number}}</p>
+           </div>
        </div>
        <div class="payment-method">
            <h1>Payment method</h1>
-           <div>
-              <h1>dfd</h1>
+           <div class="method">
+            <img src="/assets/img/paymentPage/payos.png" alt="">
+            <p>Find out PayOs terms <a href="">here</a></p>
+            <div>
+              <input type="checkbox"
+               class="round-checkbox"
+                id="checkbox"
+                 (click)="choosePayosSelected()">
+              <label for="checkbox">Choose payment method</label>
+            </div>
            </div>
-           <div>
-               <h1>dfdf</h1>
+           <div class="method">
+            <img src="/assets/img/paymentPage/vnPay.webp" alt="">
+               <p>Find out VnPay terms <a href="">here</a></p>
+               <div>
+                <input type="checkbox"
+                 class="round-checkbox"
+                  id="payosCheckbox">
+                <label for="payosCheckbox">Choose payment method</label>
+              </div>
            </div>
-           <div>
-              <h1>dfd</h1>
+           <div class="method">
+            <img src="/assets/img/paymentPage/momo.png" alt="">
+              <p>Find out Momo terms <a href="">here</a></p>
+              <div>
+                <input type="checkbox" class="round-checkbox" id="checkbox">
+                <label for="checkbox">Choose payment method</label>
+              </div>
            </div>
-           <p>content</p>
        </div>
        <div class="infomation-order">
           <h1>Infomation order</h1>
-          <p>content</p>
+          <div>
+             <div class="detail-order">
+                <img src="{{selectedCourse.img}}.png" alt="gg">
+                <h1>{{selectedCourse.nameCoarch}}</h1>
+                <p>Persional Trainer: {{selectedCourse.ptCourseName}}</p>
+                <p>Price: {{selectedCourse.price}}</p>
+                <p> ✔ Total number of training sessions: {{selectedCourse.numberSession}}</p>
+                <p> ✔ Exercises for each session</p>
+                <p> ✔ Nutritional consulting</p>
+             </div>
+          </div>
+          <div class="create-payment">
+            <button [disabled]="!payosSelected" (click)="createPayment()">Create Payment</button>
+          </div>
        </div>
   </div>
+</div>
+
+<div *ngIf="termsPopup" class="overlay"></div>
+
+<div *ngIf="termsPopup" class="popup-content">
+  <label for=""></label>
+  <input type="checkbox" placeholder="payment">
+  <a href="">I have read the terms carefully</a>
+  <button (click)="rediectPayment()">Redirect payment</button>
 </div>

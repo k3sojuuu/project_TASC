@@ -41,8 +41,10 @@ public class SchedulesController {
         // Gọi service để xử lý video và lưu exercise
         return schedulesService.setExercise(exerciseSession, videos);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+
+
     @GetMapping("/getScheduleById")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<?> getScheduleByUserId(@RequestParam Long userId){
         return schedulesService.getScheduleByUserId(userId);
     }//ok
@@ -89,7 +91,7 @@ public class SchedulesController {
     }
     @PostMapping("/createSchedule")
     public ResponseEntity<?> createSchedule(@RequestBody Schedules schedules){
-        return null;
+        return ResponseEntity.ok(schedulesService.CreateSchedules(schedules));
     } //not ok
 
     @PostMapping("/setSessionOffline")

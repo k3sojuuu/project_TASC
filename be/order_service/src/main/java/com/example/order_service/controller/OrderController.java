@@ -1,5 +1,7 @@
 package com.example.order_service.controller;
 
+import com.example.order_service.contant.OrderStatus;
+import com.example.order_service.model.OrderUpdate;
 import com.example.order_service.model.entity.Order;
 import com.example.order_service.service.impl.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,16 @@ public class OrderController {
     }
 
     @PostMapping("/createOrder")
+    @CrossOrigin(origins = "http://localhost:4200")
     ResponseEntity<?> createOrder(@RequestBody Order order){
         return ResponseEntity.ok(orderService.createOrder(order));
+    }
+    @GetMapping("/getOrderById")
+    ResponseEntity<?> getOrderByOrderId(@RequestParam Long orderId){
+        return ResponseEntity.ok(orderService.getOrderById(orderId));
+    }
+    @PostMapping("/successOrder")
+    ResponseEntity<?> successOrder(@RequestBody OrderUpdate orderUpdate){
+        return ResponseEntity.ok(orderService.updateOrder(orderUpdate));
     }
 }

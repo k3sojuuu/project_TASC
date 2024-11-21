@@ -39,37 +39,47 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         final String requestTokenHeader = request.getHeader("Authorization");
+
         String username = null;
         String jwtToken = null;
+
+        // Kiểm tra token trong header
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = getJwt(request);
             try {
                 username = jwtProvider.getUserFromJwt(jwtToken);
             } catch (IllegalArgumentException e) {
-                logger.error("Can't find token JWT");
+                logger.error("JWT Token không hợp lệ: {}" );
             } catch (ExpiredJwtException e) {
-                logger.error("Token JWT had expired");
+                logger.error("JWT Token đã hết hạn: {}");
+            } catch (Exception e) {
+                logger.error("Lỗi khi xử lý JWT Token: {}");
             }
         } else {
-            logger.warn("JWT Token is not type Bearer");
+            logger.warn("JWT Token không đúng định dạng Bearer hoặc không tồn tại.");
         }
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            List<String> roles = jwtProvider.getRoleFromToken(jwtToken);
-            UserDetails userDetails = new UserPrinciple(username, jwtToken, roles);
+        // Nếu lấy được username và chưa có Authentication
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             try {
+                // Xác thực token
                 if (jwtProvider.validateToken(jwtToken)) {
-                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                    List<String> roles = jwtProvider.getRoleFromToken(jwtToken);
+                    UserDetails userDetails = new UserPrinciple(username, jwtToken, roles);
+
+                    // Thiết lập thông tin xác thực
+                    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                             userDetails, null, userDetails.getAuthorities());
-                    usernamePasswordAuthenticationToken
-                            .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                logger.error("Lỗi xác thực token: {}");
             }
-
         }
+
+        // Tiếp tục chuỗi filter
         chain.doFilter(request, response);
     }
 }

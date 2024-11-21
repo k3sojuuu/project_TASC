@@ -1,10 +1,7 @@
 package com.example.scheduleservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -14,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "schedules")
+@Builder
 public class Schedules {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +24,8 @@ public class Schedules {
     private Date startAt;
     @Column(name = "end_at")
     private Date endAt;
+    @Column(name = "course_id")
+    private Long courseId;
     private String descriptions;
     @Column(name = "status_schedules")
     private Long statusSchedules;

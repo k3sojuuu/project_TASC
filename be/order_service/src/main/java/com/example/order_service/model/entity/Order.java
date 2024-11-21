@@ -27,7 +27,6 @@ public class Order {
 
     @Column(nullable = false)
     private Long quantity;
-
     @Column(name = "total_price")
     private Float totalPrice;
 
@@ -39,4 +38,7 @@ public class Order {
 
     @Column(name = "update_at")
     private Date updatedAt;
+
+    @Column(name = "pt_id")
+    private Long ptId;
 }

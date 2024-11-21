@@ -24,6 +24,6 @@ public interface SchedulesService {
     ResponseEntity<?> CountExerciseComplete(Long sessionId);
     ResponseEntity<?> CountSessionComplete(Long scheduleId);
     ResponseEntity<?> CountScheduleComplete();
-
+    ResponseEntity<?> CreateSchedules(Schedules schedules);
     ResponseEntity<?> sessionTotal(Long scheduleId,Long userId);
 }

@@ -1,8 +1,10 @@
 package com.example.productservice.controller;
 
+import com.example.productservice.model.MyRespone;
 import com.example.productservice.model.dto.request.BuySuccessDTO;
+import com.example.productservice.model.dto.response.PaymentResponse;
 import com.example.productservice.model.entity.Course;
-import com.example.productservice.service.CourseService;
+import com.example.productservice.repository.OrderClient;
 import com.example.productservice.service.impl.CourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class CourseController {
     @Autowired
     private CourseServiceImpl courseService;
-
     @GetMapping( "/hello")
     public ResponseEntity<?> getHello(){
         String hello = "Hello World";
@@ -38,5 +39,11 @@ public class CourseController {
     @PostMapping("/buySuccesCourse")
     ResponseEntity<?> buySuccess(@RequestBody BuySuccessDTO successDTO){
         return null;
+    }
+
+    @PostMapping("/check-stock")
+    public ResponseEntity<MyRespone> checkAndReduceStock(@RequestBody PaymentResponse paymentResponse) {
+        MyRespone response = courseService.checkAndReduceStock(paymentResponse.getCourseId(), paymentResponse.getOrderId());
+        return ResponseEntity.status(response.getStatus()).body(response);
     }
 }

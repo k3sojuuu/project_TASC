@@ -11,9 +11,12 @@ public class CourseMapper {
         course.setImg(rs.getString("img"));
         course.setDescription(rs.getString("description"));
         course.setPrice(rs.getFloat("price"));
+        course.setPtCourseName(rs.getString("pt_course_name"));
+        course.setNumberSession(rs.getLong("number_session"));
         course.setType(rs.getString("type"));
         course.setCreateAt(rs.getString("createAt"));
         course.setNameCoarch(rs.getString("name_course"));
+        course.setQuantity(rs.getLong("quantity"));
         return course;
     });
 
