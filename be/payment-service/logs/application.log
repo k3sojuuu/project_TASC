@@ -1,0 +1,810 @@
+2024-11-27 10:24:41 INFO  c.e.p.PaymentServiceApplication - Starting PaymentServiceApplication using Java 19.0.2 with PID 19260 (D:\GitHub\project_TASC\be\payment-service\build\classes\java\main started by admin in D:\GitHub\project_TASC\be\payment-service)
+2024-11-27 10:24:41 INFO  c.e.p.PaymentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-27 10:24:41 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 10:24:41 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.paymentservice.Repository.PaymentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-27 10:24:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interfaces.
+2024-11-27 10:24:42 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=20c4303d-08f2-3a9f-b0c7-1c983bbe4867
+2024-11-27 10:24:42 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.CourseClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:24:42 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.OrderClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:24:42 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:24:42 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:24:42 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:24:43 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2024-11-27 10:24:43 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-27 10:24:43 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-11-27 10:24:43 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-27 10:24:43 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1790 ms
+2024-11-27 10:24:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-27 10:24:43 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@fb349c0
+2024-11-27 10:24:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-27 10:24:43 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-27 10:24:43 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-11-27 10:24:43 INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-11-27 10:24:44 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-27 10:24:44 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-27 10:24:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 10:24:44 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-27 10:24:45 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-27 10:24:45 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-27 10:24:46 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@140d48a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cff79d2, org.springframework.security.web.context.SecurityContextHolderFilter@70041cd6, org.springframework.security.web.header.HeaderWriterFilter@8014a73, org.springframework.security.web.authentication.logout.LogoutFilter@11a35f55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45abc90f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9d9aed2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d6973ff, org.springframework.security.web.session.SessionManagementFilter@35c9050f, org.springframework.security.web.access.ExceptionTranslationFilter@23f3ecd2, org.springframework.security.web.access.intercept.AuthorizationFilter@3812191e]
+2024-11-27 10:24:46 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-27 10:24:46 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2024-11-27 10:24:47 INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class com.fasterxml.jackson.databind.deser.std.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.fasterxml.jackson.databind.deser.std.StringDeserializer
+
+2024-11-27 10:24:47 INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-11-27 10:24:47 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-27 10:24:47 INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-11-27 10:24:47 INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2024-11-27 10:24:47 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'
+2024-11-27 10:24:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 10:24:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-27 10:24:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-27 10:24:47 INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-11-27 10:24:47 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-27 10:24:47 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:357)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:156)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:124)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:966)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.paymentservice.PaymentServiceApplication.main(PaymentServiceApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:830)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:665)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createRawConsumer(DefaultKafkaConsumerFactory.java:483)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:451)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumerWithAdjustedProperties(DefaultKafkaConsumerFactory.java:427)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:394)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumer(DefaultKafkaConsumerFactory.java:371)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.<init>(KafkaMessageListenerContainer.java:865)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doStart(KafkaMessageListenerContainer.java:380)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:557)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:231)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:557)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:383)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:328)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:179)
+	... 16 common frames omitted
+Caused by: org.apache.kafka.common.KafkaException: class com.fasterxml.jackson.databind.deser.std.StringDeserializer is not an instance of org.apache.kafka.common.serialization.Deserializer
+	at org.apache.kafka.common.config.AbstractConfig.getConfiguredInstance(AbstractConfig.java:406)
+	at org.apache.kafka.common.config.AbstractConfig.getConfiguredInstance(AbstractConfig.java:440)
+	at org.apache.kafka.common.config.AbstractConfig.getConfiguredInstance(AbstractConfig.java:425)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:709)
+	... 30 common frames omitted
+2024-11-27 10:29:16 INFO  c.e.p.PaymentServiceApplication - Starting PaymentServiceApplication using Java 19.0.2 with PID 16172 (D:\GitHub\project_TASC\be\payment-service\build\classes\java\main started by admin in D:\GitHub\project_TASC\be\payment-service)
+2024-11-27 10:29:16 INFO  c.e.p.PaymentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-27 10:29:16 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 10:29:16 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.paymentservice.Repository.PaymentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:29:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-27 10:29:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interfaces.
+2024-11-27 10:29:17 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=20c4303d-08f2-3a9f-b0c7-1c983bbe4867
+2024-11-27 10:29:17 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.CourseClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:29:17 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.OrderClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:29:17 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:29:17 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:29:17 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:29:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2024-11-27 10:29:17 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-27 10:29:17 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-11-27 10:29:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-27 10:29:17 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1770 ms
+2024-11-27 10:29:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-27 10:29:18 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@630df854
+2024-11-27 10:29:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-27 10:29:18 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-27 10:29:18 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-11-27 10:29:18 INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-11-27 10:29:18 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-27 10:29:19 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-27 10:29:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 10:29:19 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-27 10:29:19 WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-11-27 10:29:19 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-27 10:29:20 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2661a3ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22af292e, org.springframework.security.web.context.SecurityContextHolderFilter@7d9cf65, org.springframework.security.web.header.HeaderWriterFilter@7ca7e510, org.springframework.security.web.authentication.logout.LogoutFilter@57dd51a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41906b2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2cf4cb13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@156c0ed5, org.springframework.security.web.session.SessionManagementFilter@2e1ec5ea, org.springframework.security.web.access.ExceptionTranslationFilter@17a81a71, org.springframework.security.web.access.intercept.AuthorizationFilter@50aa8c1b]
+2024-11-27 10:29:20 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-27 10:29:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2024-11-27 10:29:20 INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2024-11-27 10:29:20 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.1
+2024-11-27 10:29:20 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8a516edc2755df89
+2024-11-27 10:29:20 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1732678160761
+2024-11-27 10:29:20 INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): order-status-topic
+2024-11-27 10:29:20 INFO  c.e.p.PaymentServiceApplication - Started PaymentServiceApplication in 5.196 seconds (process running for 5.867)
+2024-11-27 10:29:21 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 2 : {order-status-topic=LEADER_NOT_AVAILABLE}
+2024-11-27 10:29:21 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: AT0LWLE3QyyzvG1qcXwXtg
+2024-11-27 10:29:22 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 10:29:22 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2024-11-27 10:29:22 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-375f8593-8c08-4877-a8fb-625b8be5f118
+2024-11-27 10:29:22 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 10:29:22 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2024-11-27 10:29:22 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 7 : {order-status-topic=LEADER_NOT_AVAILABLE}
+2024-11-27 10:29:22 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 8 : {order-status-topic=LEADER_NOT_AVAILABLE}
+2024-11-27 10:29:22 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting the last seen epoch of partition order-status-topic-0 to 0 since the associated topicId changed from null to lQvXwYErTnep-pJppK4Jgw
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-payment-group-1-375f8593-8c08-4877-a8fb-625b8be5f118', protocol='range'}
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 3: {consumer-payment-group-1-375f8593-8c08-4877-a8fb-625b8be5f118=Assignment(partitions=[order-status-topic-0])}
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-payment-group-1-375f8593-8c08-4877-a8fb-625b8be5f118', protocol='range'}
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[order-status-topic-0])
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: order-status-topic-0
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition order-status-topic-0
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition order-status-topic-0
+2024-11-27 10:29:25 INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition order-status-topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2024-11-27 10:29:25 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [order-status-topic-0]
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions order-status-topic-0
+2024-11-27 10:37:53 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [order-status-topic-0]
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Member consumer-payment-group-1-375f8593-8c08-4877-a8fb-625b8be5f118 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-27 10:37:53 INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Unsubscribed all topics or patterns and assigned partitions
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-27 10:37:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-27 10:37:53 INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-11-27 10:37:53 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-27 10:37:53 INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-11-27 10:37:53 INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2024-11-27 10:37:53 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: Consumer stopped
+2024-11-27 10:37:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 10:37:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-27 10:37:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-27 10:37:59 INFO  c.e.p.PaymentServiceApplication - Starting PaymentServiceApplication using Java 19.0.2 with PID 520 (D:\GitHub\project_TASC\be\payment-service\build\classes\java\main started by admin in D:\GitHub\project_TASC\be\payment-service)
+2024-11-27 10:37:59 INFO  c.e.p.PaymentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-27 10:37:59 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 10:37:59 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.paymentservice.Repository.PaymentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-27 10:38:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 1 JPA repository interfaces.
+2024-11-27 10:38:00 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=20c4303d-08f2-3a9f-b0c7-1c983bbe4867
+2024-11-27 10:38:00 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.CourseClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:38:00 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.OrderClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:38:00 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:38:00 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:38:00 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 10:38:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2024-11-27 10:38:01 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-27 10:38:01 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-11-27 10:38:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-27 10:38:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1528 ms
+2024-11-27 10:38:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-27 10:38:01 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c1bcbe6
+2024-11-27 10:38:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-27 10:38:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-27 10:38:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-11-27 10:38:01 INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-11-27 10:38:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-27 10:38:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-27 10:38:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 10:38:03 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-27 10:38:03 WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-11-27 10:38:04 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-27 10:38:04 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3fe9d7df, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2088d72e, org.springframework.security.web.context.SecurityContextHolderFilter@4394c6a5, org.springframework.security.web.header.HeaderWriterFilter@57d1ef16, org.springframework.security.web.authentication.logout.LogoutFilter@35a54a5b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19ff1324, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1987861e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bfc906a, org.springframework.security.web.session.SessionManagementFilter@426021da, org.springframework.security.web.access.ExceptionTranslationFilter@71178b1, org.springframework.security.web.access.intercept.AuthorizationFilter@11f1c1e5]
+2024-11-27 10:38:05 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-27 10:38:05 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2024-11-27 10:38:06 INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2024-11-27 10:38:06 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.1
+2024-11-27 10:38:06 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8a516edc2755df89
+2024-11-27 10:38:06 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1732678686329
+2024-11-27 10:38:06 INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): order-status-topic
+2024-11-27 10:38:06 INFO  c.e.p.PaymentServiceApplication - Started PaymentServiceApplication in 7.058 seconds (process running for 7.596)
+2024-11-27 10:38:07 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting the last seen epoch of partition order-status-topic-0 to 0 since the associated topicId changed from null to lQvXwYErTnep-pJppK4Jgw
+2024-11-27 10:38:07 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: AT0LWLE3QyyzvG1qcXwXtg
+2024-11-27 10:38:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 10:38:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2024-11-27 10:38:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-996bd02c-8405-4647-9f1f-4299979fb968
+2024-11-27 10:38:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 10:38:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=5, memberId='consumer-payment-group-1-996bd02c-8405-4647-9f1f-4299979fb968', protocol='range'}
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 5: {consumer-payment-group-1-996bd02c-8405-4647-9f1f-4299979fb968=Assignment(partitions=[order-status-topic-0])}
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=5, memberId='consumer-payment-group-1-996bd02c-8405-4647-9f1f-4299979fb968', protocol='range'}
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[order-status-topic-0])
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: order-status-topic-0
+2024-11-27 10:38:10 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Setting offset for partition order-status-topic-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2024-11-27 10:38:10 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [order-status-topic-0]
+2024-11-27 10:47:07 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node -1 disconnected.
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions order-status-topic-0
+2024-11-27 11:06:41 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [order-status-topic-0]
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Member consumer-payment-group-1-996bd02c-8405-4647-9f1f-4299979fb968 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-27 11:06:41 INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Unsubscribed all topics or patterns and assigned partitions
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-27 11:06:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-27 11:06:41 INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-11-27 11:06:41 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-27 11:06:41 INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-11-27 11:06:41 INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2024-11-27 11:06:41 INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: Consumer stopped
+2024-11-27 11:06:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 11:06:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-27 11:06:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-27 11:06:56 INFO  c.e.p.PaymentServiceApplication - Starting PaymentServiceApplication using Java 19.0.2 with PID 8096 (D:\GitHub\project_TASC\be\payment-service\build\classes\java\main started by admin in D:\GitHub\project_TASC\be\payment-service)
+2024-11-27 11:06:56 INFO  c.e.p.PaymentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-27 11:06:56 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 11:06:56 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.paymentservice.Repository.PaymentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-27 11:06:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 1 JPA repository interfaces.
+2024-11-27 11:06:57 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=20c4303d-08f2-3a9f-b0c7-1c983bbe4867
+2024-11-27 11:06:57 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.CourseClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 11:06:57 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.paymentservice.Repository.OrderClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 11:06:57 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 11:06:57 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 11:06:57 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-27 11:06:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2024-11-27 11:06:58 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-27 11:06:58 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-11-27 11:06:58 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-27 11:06:58 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1651 ms
+2024-11-27 11:06:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-27 11:06:58 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b0e401f
+2024-11-27 11:06:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-27 11:06:58 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-27 11:06:58 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-11-27 11:06:58 INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-11-27 11:06:59 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-27 11:06:59 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-27 11:06:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-27 11:06:59 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-27 11:06:59 WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-11-27 11:07:00 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-27 11:07:00 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79850a18, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a42205b, org.springframework.security.web.context.SecurityContextHolderFilter@29d506a8, org.springframework.security.web.header.HeaderWriterFilter@32cc162b, org.springframework.security.web.authentication.logout.LogoutFilter@50aa8c1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f14d853, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c5695a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4df2072b, org.springframework.security.web.session.SessionManagementFilter@2cf4cb13, org.springframework.security.web.access.ExceptionTranslationFilter@41906b2f, org.springframework.security.web.access.intercept.AuthorizationFilter@64ccf112]
+2024-11-27 11:07:00 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-27 11:07:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2024-11-27 11:07:01 INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-order-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = order-payment-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2024-11-27 11:07:01 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.1
+2024-11-27 11:07:01 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8a516edc2755df89
+2024-11-27 11:07:01 INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1732680421184
+2024-11-27 11:07:01 INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Subscribed to topic(s): out-of-stock
+2024-11-27 11:07:01 INFO  c.e.p.PaymentServiceApplication - Started PaymentServiceApplication in 5.41 seconds (process running for 6.066)
+2024-11-27 11:07:02 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Error while fetching metadata with correlation id 2 : {out-of-stock=LEADER_NOT_AVAILABLE}
+2024-11-27 11:07:02 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Cluster ID: AT0LWLE3QyyzvG1qcXwXtg
+2024-11-27 11:07:02 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 11:07:02 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 11:07:02 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b
+2024-11-27 11:07:02 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 11:07:02 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 11:07:02 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Error while fetching metadata with correlation id 7 : {out-of-stock=LEADER_NOT_AVAILABLE}
+2024-11-27 11:07:02 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Error while fetching metadata with correlation id 8 : {out-of-stock=LEADER_NOT_AVAILABLE}
+2024-11-27 11:07:02 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting the last seen epoch of partition out-of-stock-0 to 0 since the associated topicId changed from null to YLxSka68R12FPvAQoht8kA
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b', protocol='range'}
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Finished assignment for group at generation 1: {consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b=Assignment(partitions=[out-of-stock-0])}
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b', protocol='range'}
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[out-of-stock-0])
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: out-of-stock-0
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Found no committed offset for partition out-of-stock-0
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Found no committed offset for partition out-of-stock-0
+2024-11-27 11:07:05 INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting offset for partition out-of-stock-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2024-11-27 11:07:05 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: [out-of-stock-0]
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: group is already rebalancing
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Revoke previously assigned partitions out-of-stock-0
+2024-11-27 11:07:53 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions revoked: [out-of-stock-0]
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b', protocol='range'}
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Finished assignment for group at generation 2: {consumer-order-payment-group-1-0e5e1627-8b78-4c2d-a89c-29d48ada0e6d=Assignment(partitions=[out-of-stock-0]), consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b=Assignment(partitions=[])}
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b', protocol='range'}
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[])
+2024-11-27 11:07:53 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: 
+2024-11-27 11:07:53 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: []
+2024-11-27 11:16:02 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node -1 disconnected.
+2024-11-27 12:57:56 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 1 disconnected.
+2024-11-27 12:57:56 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 2147483646 disconnected.
+2024-11-27 12:57:56 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-11-27 12:57:56 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Attempt to heartbeat with Generation{generationId=2, memberId='consumer-order-payment-group-1-4a5fc6c1-a7ad-4c44-ab2b-3cebe2797e7b', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-dcfb43f6-bc63-4bab-bd30-0306abc97c29
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 12:57:57 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 12:58:01 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=4, memberId='consumer-order-payment-group-1-dcfb43f6-bc63-4bab-bd30-0306abc97c29', protocol='range'}
+2024-11-27 12:58:01 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Finished assignment for group at generation 4: {consumer-order-payment-group-1-dcfb43f6-bc63-4bab-bd30-0306abc97c29=Assignment(partitions=[]), consumer-order-payment-group-1-a4cfd6fd-c156-4377-9b65-88eb9cf6da38=Assignment(partitions=[out-of-stock-0])}
+2024-11-27 12:58:01 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=4, memberId='consumer-order-payment-group-1-dcfb43f6-bc63-4bab-bd30-0306abc97c29', protocol='range'}
+2024-11-27 12:58:01 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[])
+2024-11-27 12:58:01 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: 
+2024-11-27 12:58:01 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: []
+2024-11-27 12:58:16 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m19s443ms327µs600ns).
+2024-11-27 13:34:11 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 1 disconnected.
+2024-11-27 13:34:11 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 2147483646 disconnected.
+2024-11-27 13:34:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Attempt to heartbeat with Generation{generationId=4, memberId='consumer-order-payment-group-1-dcfb43f6-bc63-4bab-bd30-0306abc97c29', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-4a422251-a806-4666-a8d8-24af7a8514d1
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 13:34:12 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 13:34:13 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m26s61ms859µs800ns).
+2024-11-27 13:34:15 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=6, memberId='consumer-order-payment-group-1-4a422251-a806-4666-a8d8-24af7a8514d1', protocol='range'}
+2024-11-27 13:34:15 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=6, memberId='consumer-order-payment-group-1-4a422251-a806-4666-a8d8-24af7a8514d1', protocol='range'}
+2024-11-27 13:34:15 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[])
+2024-11-27 13:34:15 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: 
+2024-11-27 13:34:15 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: []
+2024-11-27 15:10:37 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 1 disconnected.
+2024-11-27 15:10:37 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 2147483646 disconnected.
+2024-11-27 15:10:37 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Attempt to heartbeat with Generation{generationId=6, memberId='consumer-order-payment-group-1-4a422251-a806-4666-a8d8-24af7a8514d1', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-9098afb2-62d3-488f-bf11-79fff5d1df42
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 15:10:40 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 15:10:43 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m59s64ms260µs500ns).
+2024-11-27 15:10:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=8, memberId='consumer-order-payment-group-1-9098afb2-62d3-488f-bf11-79fff5d1df42', protocol='range'}
+2024-11-27 15:10:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=8, memberId='consumer-order-payment-group-1-9098afb2-62d3-488f-bf11-79fff5d1df42', protocol='range'}
+2024-11-27 15:10:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[])
+2024-11-27 15:10:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: 
+2024-11-27 15:10:43 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: []
+2024-11-27 16:56:29 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 1 disconnected.
+2024-11-27 16:56:29 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Node 2147483646 disconnected.
+2024-11-27 16:56:29 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Attempt to heartbeat with Generation{generationId=8, memberId='consumer-order-payment-group-1-9098afb2-62d3-488f-bf11-79fff5d1df42', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 16:56:30 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 16:56:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=10, memberId='consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2', protocol='range'}
+2024-11-27 16:56:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Finished assignment for group at generation 10: {consumer-order-payment-group-1-eccca273-3afe-46b8-a67f-726cddf26961=Assignment(partitions=[]), consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2=Assignment(partitions=[out-of-stock-0])}
+2024-11-27 16:56:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=10, memberId='consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2', protocol='range'}
+2024-11-27 16:56:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[out-of-stock-0])
+2024-11-27 16:56:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: out-of-stock-0
+2024-11-27 16:56:34 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Setting offset for partition out-of-stock-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2024-11-27 16:56:34 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: [out-of-stock-0]
+2024-11-27 16:56:47 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m2s601ms183µs700ns).
+2024-11-27 17:11:05 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Disconnecting from node 1 due to request timeout.
+2024-11-27 17:11:06 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Cancelled in-flight FETCH request with correlation id 5749 due to node 1 being disconnected (elapsed time since creation: 522451ms, elapsed time since send: 522451ms, request timeout: 30000ms)
+2024-11-27 17:11:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+2024-11-27 17:11:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:06 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Client requested disconnect from node 2147483646
+2024-11-27 17:11:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:07 WARN  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-11-27 17:11:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Member consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to consumer poll timeout has expired.
+2024-11-27 17:11:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-27 17:11:07 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-27 17:11:06 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Error sending fetch request (sessionId=436534317, epoch=782) to node 1:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Giving away all assigned partitions as lost since generation/memberID has been reset,indicating that consumer is in old state or no longer part of the group
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Lost previously assigned partitions out-of-stock-0
+2024-11-27 17:11:08 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions lost: [out-of-stock-0]
+2024-11-27 17:11:08 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions revoked: [out-of-stock-0]
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:11:08 ERROR o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] LeaveGroup request with Generation{generationId=10, memberId='consumer-order-payment-group-1-44ad078c-6e2d-4ab7-980f-4cf2eedb14d2', protocol='range'} failed with error: The coordinator is not aware of this member.
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-2d93ed9a-5660-453a-9c61-7bc94bfd5e46
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 17:11:08 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 17:11:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=12, memberId='consumer-order-payment-group-1-2d93ed9a-5660-453a-9c61-7bc94bfd5e46', protocol='range'}
+2024-11-27 17:11:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Finished assignment for group at generation 12: {consumer-order-payment-group-1-0c8c7da2-9a77-481c-9c1e-e1d8fc6f95b0=Assignment(partitions=[out-of-stock-0]), consumer-order-payment-group-1-2d93ed9a-5660-453a-9c61-7bc94bfd5e46=Assignment(partitions=[])}
+2024-11-27 17:11:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=12, memberId='consumer-order-payment-group-1-2d93ed9a-5660-453a-9c61-7bc94bfd5e46', protocol='range'}
+2024-11-27 17:11:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[])
+2024-11-27 17:11:11 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: 
+2024-11-27 17:11:11 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: []
+2024-11-27 17:11:28 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m10s917ms264µs300ns).
+2024-11-27 17:22:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+2024-11-27 17:22:41 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:22:41 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Client requested disconnect from node 2147483646
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Attempt to heartbeat with Generation{generationId=12, memberId='consumer-order-payment-group-1-2d93ed9a-5660-453a-9c61-7bc94bfd5e46', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: need to re-join with the given member-id: consumer-order-payment-group-1-6ae4a575-a4c2-4150-8bc4-e140f0b90c30
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-11-27 17:22:43 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] (Re-)joining group
+2024-11-27 17:22:44 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m16s262ms72µs700ns).
+2024-11-27 17:22:46 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully joined group with generation Generation{generationId=14, memberId='consumer-order-payment-group-1-6ae4a575-a4c2-4150-8bc4-e140f0b90c30', protocol='range'}
+2024-11-27 17:22:46 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Successfully synced group in generation Generation{generationId=14, memberId='consumer-order-payment-group-1-6ae4a575-a4c2-4150-8bc4-e140f0b90c30', protocol='range'}
+2024-11-27 17:22:46 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Notifying assignor about the new Assignment(partitions=[out-of-stock-0])
+2024-11-27 17:22:46 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Adding newly assigned partitions: out-of-stock-0
+2024-11-27 17:22:46 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-payment-group-1, groupId=order-payment-group] Setting offset for partition out-of-stock-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2024-11-27 17:22:46 INFO  o.s.k.l.KafkaMessageListenerContainer - order-payment-group: partitions assigned: [out-of-stock-0]

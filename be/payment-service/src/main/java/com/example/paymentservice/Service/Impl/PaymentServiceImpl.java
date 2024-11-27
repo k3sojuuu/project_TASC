@@ -2,15 +2,21 @@ package com.example.paymentservice.Service.Impl;
 
 import com.example.paymentservice.Dao.PaymentDao;
 import com.example.paymentservice.Model.DTO.PaymentRequest;
+import com.example.paymentservice.Model.DTO.PaymentResponseDTO;
 import com.example.paymentservice.Model.DTO.PaymentSuccess;
+import com.example.paymentservice.Model.DTO.RefundRequest;
 import com.example.paymentservice.Model.Entity.Payment;
 import com.example.paymentservice.Repository.PaymentRepository;
 import com.example.paymentservice.Service.PaymentService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -22,16 +28,17 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Formatter;
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 
 @Service
+@Slf4j
 public class PaymentServiceImpl implements PaymentService {
 
     private final WebClient webClient;
-
     private final PaymentDao paymentDao;
     private final PaymentRepository paymentRepository;
 
@@ -48,6 +55,53 @@ public class PaymentServiceImpl implements PaymentService {
         this.webClient = webClientBuilder.baseUrl("https://api-merchant.payos.vn").build();
         this.paymentDao = paymentDao;
         this.paymentRepository = paymentRepository;
+    }
+
+//    @KafkaListener(topics = "order-status-topic", groupId = "payment-group")
+//    public void listenRefundRequest(String message) {
+//        log.info("Received message from Kafka: {}", message);
+//
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        try {
+//            RefundRequest refundRequest = objectMapper.readValue(message, RefundRequest.class);
+//            log.info("Processing refund for Order ID: {}, Reason: {}", refundRequest.getOrderId(), refundRequest.getReason());
+//
+//            processRefund(refundRequest);
+//
+//        } catch (JsonProcessingException e) {
+//            log.error("Failed to parse message: {}", e.getMessage());
+//        } catch (Exception e) {
+//            log.error("Failed to process refund: {}", e.getMessage());
+//        }
+//    }
+
+    @KafkaListener(topics = "out-of-stock", groupId = "order-payment-group")
+    public void listenOutOfStock(String message) {
+        // Xử lý thông báo khi khóa học hết hàng
+        log.warn("Received out-of-stock message: {}", message);
+        // Cập nhật trạng thái thanh toán hoặc thông báo người dùng
+    }
+
+    private void processRefund(RefundRequest refundRequest) {
+        log.info("Refunding money for Order ID: {}", refundRequest.getOrderId());
+
+        boolean success = false;
+        try {
+            success = refundPaymentGateway(refundRequest.getOrderId());
+            int check = paymentDao.updateRefund("REFUND", refundRequest.getOrderId(), LocalDateTime.now());
+            if (success && check > 0) {
+                log.info("Refund completed for Order ID: {}", refundRequest.getOrderId());
+            } else {
+                log.error("Refund failed for Order ID: {}. Database update returned: {}", refundRequest.getOrderId(), check);
+            }
+        } catch (Exception e) {
+            log.error("An error occurred while processing the refund for Order ID: {}: {}", refundRequest.getOrderId(), e.getMessage(), e);
+        }
+    }
+
+    private boolean refundPaymentGateway(Long orderId) {
+        log.info("Connecting to payment gateway for refund...");
+        return true;
     }
 
     @Override
@@ -81,7 +135,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public ResponseEntity<?> paymentSuccess(PaymentSuccess paymentSuccess) {
+    public ResponseEntity<?> paymentSuccess(PaymentSuccess paymentSuccess){
         paymentSuccess.setUpdateAt(LocalDate.now());
         int rowUpdate = paymentDao.updateStatusPayment(paymentSuccess.getPaymentStatus(),
                 paymentSuccess.getTransactionId(),
@@ -111,6 +165,7 @@ public class PaymentServiceImpl implements PaymentService {
         }
         return result;
     }
+
 
 
 

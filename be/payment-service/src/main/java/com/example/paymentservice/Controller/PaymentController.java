@@ -1,8 +1,6 @@
 package com.example.paymentservice.Controller;
 
-import com.example.paymentservice.Model.DTO.PaymentRequest;
-import com.example.paymentservice.Model.DTO.PaymentResponse;
-import com.example.paymentservice.Model.DTO.PaymentSuccess;
+import com.example.paymentservice.Model.DTO.*;
 import com.example.paymentservice.Model.Entity.Payment;
 import com.example.paymentservice.Model.OrderUpdate;
 import com.example.paymentservice.Repository.CourseClient;
@@ -40,7 +38,7 @@ public class PaymentController {
     }
 
     @GetMapping("/payment-success")
-    public String paymentSuccess(
+    public ResponseEntity<?> paymentSuccess(
             @RequestParam String code,
             @RequestParam String id,
             @RequestParam boolean cancel,
@@ -51,18 +49,21 @@ public class PaymentController {
         System.out.println("Cancel: " + cancel);
         System.out.println("Status: " + status);
         System.out.println("Order Code: " + orderCode);
+        PaymentResponseDTO responseDTO = new PaymentResponseDTO();
         PaymentSuccess success = PaymentSuccess.builder()
                 .paymentStatus(status)
                 .transactionId(id).build();
         paymentService.paymentSuccess(success);
         Long orderId = paymentService.getOrderIdFromPayment(id);
+        Long courseId = paymentService.getCourseIdFromPayment(id);
         OrderUpdate update = OrderUpdate.builder().orderId(orderId)
                 .status(status).build();
         if (status.equals("PAID")){
-             Long courseId = paymentService.getCourseIdFromPayment(id);
-             courseClient.checkAndReduceStock(courseId);
+            responseDTO.setCourseId(courseId);
+            responseDTO.setOrderId(orderId);
+            return ResponseEntity.ok(courseClient.checkAndReduceStock(responseDTO));
         }
-        return "Thanh toán thành công!";
+        return ResponseEntity.ok("fail");
     }
     @PostMapping("/create")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -77,6 +78,7 @@ public class PaymentController {
                     .orderId(paymentRequest.getOrderId())
                     .paymentStatus(paymentResponse.getData().getStatus())
                     .paymentMethod("PayOS")
+                    .courseId(paymentRequest.getCourseId())
                     .transactionId(paymentResponse.getData().getPaymentLinkId())
                     .createAt(LocalDateTime.now()).build();
             paymentService.saveInforPayment(payment);
@@ -105,5 +107,8 @@ public class PaymentController {
         String claims = client.getHelloWorld();
         return ResponseEntity.ok("claims message from course:" + claims);
     };
-
+    @PostMapping("/testFeign")
+    ResponseEntity<?> response(@RequestBody PaymentResponseDTO dto){
+        return ResponseEntity.ok(courseClient.checkAndReduceStock(dto));
+    }
 }

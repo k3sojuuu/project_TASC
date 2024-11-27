@@ -3,6 +3,7 @@ package com.example.scheduleservice.service;
 import com.example.scheduleservice.model.DTO.SessionOfflineDTO;
 import com.example.scheduleservice.model.DTO.SessionOnlineDTO;
 import com.example.scheduleservice.model.Exercise;
+import com.example.scheduleservice.model.Response.MyResponse;
 import com.example.scheduleservice.model.Schedules;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,6 @@ public interface SchedulesService {
     ResponseEntity<?> CountExerciseComplete(Long sessionId);
     ResponseEntity<?> CountSessionComplete(Long scheduleId);
     ResponseEntity<?> CountScheduleComplete();
-    ResponseEntity<?> CreateSchedules(Schedules schedules);
+    MyResponse CreateSchedules(Schedules schedules);
     ResponseEntity<?> sessionTotal(Long scheduleId,Long userId);
 }

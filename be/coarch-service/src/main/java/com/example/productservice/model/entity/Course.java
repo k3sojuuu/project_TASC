@@ -32,5 +32,6 @@ public class Course {
     @Column(name = "name_course")
     private String nameCoarch;
     private Long quantity;
+    @Column(name = "create_at")
     private String createAt;
 }

@@ -26,10 +26,9 @@ public class CourseDaoImpl implements CourseDao {
     }
     private CourseMapper courseMapper = new CourseMapper();
     @Override
-    public List<Course> getAllCourse(int page, int size) {
-        String query = "SELECT * FROM course LIMIT ? OFFSET ?";
-        int offset = page * size;
-        return jdbcTemplate.query(query, new CourseMapper().getCourseMap(), size, offset);
+    public List<Course> getAllCourse() {
+        String query = "SELECT * FROM course";
+        return jdbcTemplate.query(query, new CourseMapper().getCourseMap());
     }
     @Override
     public List<Course> getCourseByType(String type){

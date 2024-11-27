@@ -16,4 +16,5 @@ public interface CourseService {
     ResponseEntity<?> buySuccess(BuySuccessDTO buySuccessDTO);
 
     MyRespone checkAndReduceStock(Long courseId,Long orderId);
+    Course getCourseById(Long courseId);
 }

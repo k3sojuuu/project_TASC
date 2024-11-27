@@ -59,15 +59,15 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             logger.warn("JWT Token không đúng định dạng Bearer hoặc không tồn tại.");
         }
 
-        // Nếu lấy được username và chưa có Authentication
+
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             try {
-                // Xác thực token
+
                 if (jwtProvider.validateToken(jwtToken)) {
                     List<String> roles = jwtProvider.getRoleFromToken(jwtToken);
                     UserDetails userDetails = new UserPrinciple(username, jwtToken, roles);
 
-                    // Thiết lập thông tin xác thực
+
                     UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                             userDetails, null, userDetails.getAuthorities());
                     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

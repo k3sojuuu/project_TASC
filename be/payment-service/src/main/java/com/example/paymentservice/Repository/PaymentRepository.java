@@ -22,4 +22,5 @@ public interface PaymentRepository extends JpaRepository<Payment,Long> {
     Long getOrderIdByTransactionId(@Param("transactionId") String transactionId);
     @Query(value = "select course_id from payments where transaction_id =:transactionId",nativeQuery = true)
     Long getCourseIdByTransactionId(@Param("transactionId") String transactionId);
+
 }

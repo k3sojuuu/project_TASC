@@ -21,7 +21,8 @@ public interface OrderStoreProcedure extends JpaRepository<Order,Long> {
                      @Param("quantity")Long quantity,
                      @Param("totalPrice")Float totalPrice,
                      @Param("status")String status,
-                     @Param("createAt") LocalDateTime createAt);
+                     @Param("createAt") LocalDateTime createAt,
+                     @Param("ptId")Long ptId);
     @Procedure(name = "successOrder")
     void successOrder(@Param("orderId")Long orderId,
                       @Param("newStatus")String status,

@@ -1,5 +1,7 @@
 package com.example.scheduleservice.service.Impl;
 
+import com.example.scheduleservice.constan.SchedulesStatus;
+import com.example.scheduleservice.constan.SchedulesType;
 import com.example.scheduleservice.dao.SchedulesDao;
 import com.example.scheduleservice.model.DTO.*;
 import com.example.scheduleservice.model.Exercise;
@@ -202,17 +204,38 @@ public class SchedulesServiceImpl implements SchedulesService {
     }
 
     @Override
-    public ResponseEntity<?> CreateSchedules(Schedules schedules) {
-        Schedules create = Schedules.builder()
-                .uid(schedules.getUid())
-                .ptId(schedules.getPtId())
-                .startAt(new Date())
-                .sessionNumber(schedules.getSessionNumber())
-                .schedulesType()
-                .build();
-        return null;
+    public MyResponse CreateSchedules(Schedules schedules) {
+        MyResponse myResponse = new MyResponse();
+        try {
+            Schedules create = Schedules.builder()
+                    .uid(schedules.getUid())
+                    .ptId(schedules.getPtId())
+                    .startAt(new Date())
+                    .sessionNumber(schedules.getSessionNumber())
+                    .schedulesType(SchedulesType.ONLINE)
+                    .statusSchedules(SchedulesStatus.TRAINING)
+                    .price(schedules.getPrice())
+                    .courseId(schedules.getCourseId())
+                    .build();
+            schedulesRepository.save(create);
+            Long key = create.getId();
+            if (key != null) {
+                myResponse.setMessage("Add success");
+                myResponse.setStatus(200);
+                myResponse.setData(create);
+            } else {
+                myResponse.setMessage("Add fail");
+                myResponse.setStatus(400);
+                myResponse.setData(null);
+            }
+        } catch (Exception e) {
+            myResponse.setMessage("An error occurred: " + e.getMessage());
+            myResponse.setStatus(500);
+            myResponse.setData(null);
+            System.err.println("Error while creating schedule: " + e.getMessage());
+        }
+        return myResponse;
     }
-
     @Override
     public ResponseEntity<?> sessionTotal(Long scheduleId,Long userId) {
         Long result = schedulesRepository.getTotalSessionByScheduleIdAndUserId(userId,scheduleId);

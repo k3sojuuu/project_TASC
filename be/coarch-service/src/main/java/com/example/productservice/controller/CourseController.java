@@ -46,4 +46,9 @@ public class CourseController {
         MyRespone response = courseService.checkAndReduceStock(paymentResponse.getCourseId(), paymentResponse.getOrderId());
         return ResponseEntity.status(response.getStatus()).body(response);
     }
+
+    @GetMapping("/getCourseById")
+    public ResponseEntity<?> getCourseById(@RequestParam Long courseId){
+        return ResponseEntity.ok(courseService.getCourseById(courseId));
+    }
 }

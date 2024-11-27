@@ -2,6 +2,7 @@ package com.example.paymentservice.Service;
 
 import com.example.paymentservice.Model.DTO.PaymentRequest;
 import com.example.paymentservice.Model.DTO.PaymentResponse;
+import com.example.paymentservice.Model.DTO.PaymentResponseDTO;
 import com.example.paymentservice.Model.DTO.PaymentSuccess;
 import com.example.paymentservice.Model.Entity.Payment;
 import org.springframework.http.ResponseEntity;

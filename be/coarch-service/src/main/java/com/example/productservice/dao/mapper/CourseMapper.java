@@ -14,7 +14,7 @@ public class CourseMapper {
         course.setPtCourseName(rs.getString("pt_course_name"));
         course.setNumberSession(rs.getLong("number_session"));
         course.setType(rs.getString("type"));
-        course.setCreateAt(rs.getString("createAt"));
+        course.setCreateAt(rs.getString("create_at"));
         course.setNameCoarch(rs.getString("name_course"));
         course.setQuantity(rs.getLong("quantity"));
         return course;

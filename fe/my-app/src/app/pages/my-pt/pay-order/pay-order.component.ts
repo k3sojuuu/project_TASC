@@ -106,7 +106,7 @@ createPayment(){
         cancelUrl: '',
         returnUrl: '',
         expiredAt: 1696559798,
-        signature: 'calculated-signature-value',
+        signature: 'calculated-signature-value', 
     }
     console.log("Data",paymentData)
     this.CreatePaymentPayOs(paymentData)
@@ -129,5 +129,4 @@ choosePayosSelected(){
 rediectPayment(){
   window.location.href = this.pagePayment
 }
-
 }

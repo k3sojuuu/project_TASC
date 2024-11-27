@@ -38,7 +38,6 @@ public class Order {
 
     @Column(name = "update_at")
     private Date updatedAt;
-
     @Column(name = "pt_id")
     private Long ptId;
 }
