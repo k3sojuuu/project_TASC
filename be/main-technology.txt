@@ -1,0 +1,32 @@
+Main Techlonogy - MyPT - Hệ thống khóa học huấn luyện viên cá nhân
+
+Các công nghệ chính sử dụng:
+-Microservice:chia nhỏ ứng dụng thành các service nghiệp vụ,các service chính:
+        +Register:quản lý các service nghiệp vụ,các service nghiệp vụ phải đăng kí với eureka
+        +Gatewave:sử dụng để routing,author một vài api quan trọng
+        +UserService: service chính sử dụng để xác thực và phân quyền,quản lý các tài khoản,đăng kí,đăng nhập,quên mật khẩu,..
+        +OrderService: có vai trò lên đơn hàng các khóa học,thống kê,..
+        +SchelulesService: sử dụng để quản lý các khóa học,tạo các buổi học và các bài tập,..
+        +PaymentService: sử dụng để thanh toán các khóa học đã mua(PayOS)
+        +CourseService: các khóa học,..
+        +MediaService: sử dụng để xử lý ảnh và video(Imgur)
+        +NotificationService:gửi thông báo đến khách hàng(có các mail,gửi thông báo đến tài khoản về các bài tập,buổi tập mới,phản hồi từ admin,..)
+-Eureka + API Gatewave:2 thành phần quan trọng trong mô hình microservice,Eureka sẽ đóng vai trò là thằng quản lý chung,tất cả các service đều phải đăng kí với
+eureka,còn API Gatewave đóng vai trò tở thành đầu vào duy nhất của ứng dụng,tất cả các yêu cầu từ client phải thông qua gatewave trước khi được định tuyến đến các 
+service nghiệp vụ,routing,kiểm tra quyền truy cập một vài đầu api quan trọng,..
+-SpringSecurity + JWT:Sử dụng trong phần xác thực(Authentication) tài khoản và phân quyền(Authorization) cho các role 
+-JPA: sử dụng chủ yếu cho UserService,..
+-Jdbc Template: sử dụng cho CourseService,ScheduleService
+-Store Producer: sử dụng cho OrderService
+-Non-Cluster: để đánh vào cột email,phoneNumber trong các tài khoản
+-Partition:Sử dụng để đánh vào bảng type của phần course,vì có 3 loại khóa học chính là:Gym,Pilates,Yoga
+-Transaction:quản lý tại từng service
+-Thread,Multithread,ExcutorService:sử dụng để cache các cronJob Course,kiểm tra các giao dịch trong trường hợp không nhận đc respone từ phương thức thanh toán
+,gửi mail cho các tài khoản,..
+-FeignClient:giao tiếp giữa các service
+-Redis: Sử dụng để cache các phần mô tả của khóa học,chi tiết khóa học,và các khóa học liên quan
+-SpringBootLoging: để log các lỗi ra file
+-JavaMailSender: sử dụng để gửi Mail đến khách hàng(Quên mật khẩu,các thông báo accept,reject PT,...)
+-Kafka:sử dụng chủ yếu để gửi các message từ các service đến notificationService -> thông báo đến khách hàng,người dùng,hoặc khi pt mở 1 khóa học có các bài học
+ miễn phí,người dùng sẽ đăng kí với một số lượng rất lớn trong cùng 1 thời điểm,sẽ đưa vào kafka để xử lý 
+-Swagger: xuất bản các API

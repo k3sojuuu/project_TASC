@@ -167,7 +167,6 @@ public class AuthServiceImpl implements AuthService {
         forgotPassword.setEmail(formForgotPassword.getEmail());
         forgotPassword.setCodeConfirm(codeConfirm);
         forgotPassword.setCreateAt(LocalDateTime.now());
-
         ExecutorService service = Executors.newFixedThreadPool(2);
         try {
             service.submit(new Runnable() {
