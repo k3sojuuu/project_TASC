@@ -27,7 +27,6 @@ public class UserPrinciple implements UserDetails {
 
     public static UserPrinciple build(UserDTO userDTO){
         List<GrantedAuthority> authorities;
-
         authorities = userDTO.getRoles().stream().
                 map((s) -> new SimpleGrantedAuthority(s)).collect(Collectors.toList());
         return new UserPrinciple(

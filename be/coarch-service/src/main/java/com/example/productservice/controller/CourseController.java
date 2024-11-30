@@ -51,4 +51,9 @@ public class CourseController {
     public ResponseEntity<?> getCourseById(@RequestParam Long courseId){
         return ResponseEntity.ok(courseService.getCourseById(courseId));
     }
+
+    @GetMapping("/catchLog")
+    public ResponseEntity<?> catchLog(){
+        return ResponseEntity.ok(catchLog());
+    }
 }

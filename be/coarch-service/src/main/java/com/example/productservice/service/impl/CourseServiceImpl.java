@@ -16,6 +16,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
@@ -38,6 +40,8 @@ public class CourseServiceImpl implements CourseService {
     private final OrderClient orderClient;
     private final CourseRepository courseRepository;
 
+    private static final Logger log = LoggerFactory.getLogger(CourseServiceImpl.class);
+
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final RedisTemplate<String, String> redisTemplate;
 
@@ -46,6 +50,13 @@ public class CourseServiceImpl implements CourseService {
         List<Course> courses = courseDao.getAllCourse();
         ResponseCourseSort<Course> response = new ResponseCourseSort<>(page, size, courses);
         return ResponseEntity.ok(response);
+    }
+
+    public String catchLog() {
+        log.debug("This is a debug message");
+        log.info("This is an info message");
+        log.error("This is an error message");
+        return "captured log";
     }
 
     @Override
