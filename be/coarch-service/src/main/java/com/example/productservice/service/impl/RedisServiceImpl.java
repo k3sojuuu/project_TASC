@@ -78,13 +78,6 @@ public class RedisServiceImpl implements RedisService {
         }
         return null;
     }
-    //Lấy danh sách các khóa học từ Redis và phân trang
-    //Lấy JSON từ Redis với key "course_list"
-    //Deserialize JSON thành danh sách đối tượng Course bằng ObjectMapper
-    //Sử dụng stream() để phân trang
-    //Giới hạn 10 phần tử (limit(10))
-    //Bỏ qua phần tử ở các trang trước (skip(page * 9))
-    //Phân trang danh sách khóa học từ cache Redis để giảm tải cơ sở dữ liệu
 
     @Override
     public ResponseEntity<?> getCourseById(long id) {

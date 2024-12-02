@@ -26,6 +26,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -138,7 +139,7 @@ public class CourseServiceImpl implements CourseService {
                 myRespone.setData(null);
                 return myRespone;
             }
-            int updateRows = courseDao.updateCourseQuantity(courseId,1);
+            int updateRows = courseDao.updateCourseQuantity(courseId,1, LocalDateTime.now());
             if (updateRows > 0){
                 OrderUpdate orderUpdate = OrderUpdate.builder().orderId(orderId)
                                          .status(OrderStatus.SUCCESS).build();

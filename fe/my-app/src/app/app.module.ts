@@ -40,6 +40,7 @@ import { Subpage3Component } from './pages/profile/subpage3/subpage3.component';
 import { Subpage4Component } from './pages/profile/subpage4/subpage4.component';
 import { SessionComponent } from './pages/profile/subpage2/session/session.component';
 import { ExerciseComponent } from './pages/profile/subpage2/session/exercise/exercise.component';
+import { FoodComponent } from './pages/about-us/food/food.component';
 
 
 
@@ -74,7 +75,8 @@ import { ExerciseComponent } from './pages/profile/subpage2/session/exercise/exe
     Subpage3Component,
     Subpage4Component,
     SessionComponent,
-    ExerciseComponent
+    ExerciseComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,

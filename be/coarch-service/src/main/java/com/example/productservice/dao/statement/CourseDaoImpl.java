@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.List;
 @Component
 public class CourseDaoImpl implements CourseDao {
@@ -63,9 +64,9 @@ public class CourseDaoImpl implements CourseDao {
         return jdbcTemplate.queryForObject(sql,new  CourseMapper().getCourseMap(), courseId);
     }
 
-    public int updateCourseQuantity(Long courseId, int quantity) {
-        String sql = "UPDATE Course SET quantity = quantity - ? WHERE id = ? AND quantity >= ?";
-        return jdbcTemplate.update(sql, quantity, courseId, quantity);
+    public int updateCourseQuantity(Long courseId, int quantity, LocalDateTime updateAt) {
+        String sql = "UPDATE Course SET quantity = quantity - ?,update_at = ? WHERE id = ? AND quantity >= ?";
+        return jdbcTemplate.update(sql, quantity,updateAt, courseId, quantity);
     }
 
 
