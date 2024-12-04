@@ -35,6 +35,7 @@ public class RelatCourseJob implements Runnable{
                     }
                     service.setValueRedisHash(cacheKey + q, courseMap, 1, TimeUnit.DAYS);
                 }
+                Thread.sleep(100);
             }
         }catch (Exception e){
             e.printStackTrace();

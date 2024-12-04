@@ -29,6 +29,7 @@ public class CourseJob implements Runnable{
                                                ,mapper.writeValueAsString(res)
                                                ,1, TimeUnit.DAYS);
             }
+            Thread.sleep(100);
         }  catch (Exception e){
             e.printStackTrace();
             System.out.println("Course: Can't cache item");

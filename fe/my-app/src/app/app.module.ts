@@ -41,6 +41,7 @@ import { Subpage4Component } from './pages/profile/subpage4/subpage4.component';
 import { SessionComponent } from './pages/profile/subpage2/session/session.component';
 import { ExerciseComponent } from './pages/profile/subpage2/session/exercise/exercise.component';
 import { FoodComponent } from './pages/about-us/food/food.component';
+import { CardComponent } from './pages/about-us/card/card.component';
 
 
 
@@ -76,7 +77,8 @@ import { FoodComponent } from './pages/about-us/food/food.component';
     Subpage4Component,
     SessionComponent,
     ExerciseComponent,
-    FoodComponent
+    FoodComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

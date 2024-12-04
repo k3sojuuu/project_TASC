@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -162,6 +164,7 @@ public class RedisServiceImpl implements RedisService {
     public void deleteCourse(String redisKey, Long courseId) {
         template.opsForHash().delete(redisKey, String.valueOf(courseId));
     }
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void updateCourse(String redisKey, Long courseId, Course course) {
         try {
             String courseJson = redisMapper.writeValueAsString(course);

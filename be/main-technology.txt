@@ -1,9 +1,8 @@
 Main Techlonogy - MyPT - Hệ thống khóa học huấn luyện viên cá nhân
 
-Các công nghệ chính sử dụng:
--Microservice:chia nhỏ ứng dụng thành các service nghiệp vụ,các service chính:
+-Sử dụng kiến trúc Microservice:chia nhỏ ứng dụng thành các service nghiệp vụ,các service chính:
         +Register:quản lý các service nghiệp vụ,các service nghiệp vụ phải đăng kí với eureka
-        +Gatewave:sử dụng để routing,author một vài api quan trọng
+        +Gatewave:sử dụng để routing,loadBalancing
         +UserService: service chính sử dụng để xác thực và phân quyền,quản lý các tài khoản,đăng kí,đăng nhập,quên mật khẩu,..
         +OrderService: có vai trò lên đơn hàng các khóa học,thống kê,..
         +SchelulesService: sử dụng để quản lý các khóa học,tạo các buổi học và các bài tập,..
@@ -12,21 +11,49 @@ Các công nghệ chính sử dụng:
         +MediaService: sử dụng để xử lý ảnh và video(Imgur)
         +NotificationService:gửi thông báo đến khách hàng(có các mail,gửi thông báo đến tài khoản về các bài tập,buổi tập mới,phản hồi từ admin,..)
 -Eureka + API Gatewave:2 thành phần quan trọng trong mô hình microservice,Eureka sẽ đóng vai trò là thằng quản lý chung,tất cả các service đều phải đăng kí với
-eureka,còn API Gatewave đóng vai trò tở thành đầu vào duy nhất của ứng dụng,tất cả các yêu cầu từ client phải thông qua gatewave trước khi được định tuyến đến các 
-service nghiệp vụ,routing,kiểm tra quyền truy cập một vài đầu api quan trọng,..
+eureka,còn API Gatewave đóng vai trò trở thành đầu vào duy nhất của ứng dụng,tất cả các yêu cầu từ client phải thông qua gatewave trước khi được định tuyến đến các 
+service nghiệp vụ,routing,..
 -SpringSecurity + JWT:Sử dụng trong phần xác thực(Authentication) tài khoản và phân quyền(Authorization) cho các role 
--JPA: sử dụng chủ yếu cho UserService,..
--Jdbc Template: sử dụng cho CourseService,ScheduleService
--Store Producer: sử dụng cho OrderService
+
+-JPA: sử dụng chủ yếu cho UserService,.. -> Bởi vì trong UserService(Auth Service,service chính để xác thực và phân quyền) em có sử dụng rất nhiều các hàm
+findUserById,getRole,UserRole,...các hàm boolean check tồn tại của Email,Username,Password bằng các hàm có sẵn,kiểu service này đa số phục vụ check,lấy thông tin
+của người dùng và gần nhưJPA hỗ trợ gần hết nên em quyết định dùng Jpa cho service này
+
+-Jdbc Template: sử dụng cho CourseService,ScheduleService -> vì trong các service này em cần join rất nhiều bảng và cần lấy ra rất nhiều trường thông tin khác nhau 
+với các điều kiện kèm theo nhiều điều kiện where,sử dụng limit,offset,... ví dụ như trong Schedule: Schedule là một khóa học,trong khóa học lại có các 
+buổi tập(Session),trong các buổi tập lại có nhiều bài tập(Exercise),cần lấy ra các trường theo id của người dùng,của pt nào,đã hoàn thành hay chưa... nên việc viết query
+ nó dễ handle hơn rất nhiều thay vì JPA thường tải tất cả các trường, dẫn đến dư thừa dữ liệu nếu chỉ cần một số trường cụ thể.
+Để xử lý các điều kiện lọc phức tạp thì lại cần sử dụng thêm stream để lọc dữ liệu sau khi lấy từ DB, gây tốn bộ nhớ và hiệu năng.,em hoàn toàn có thể sử dụng câu lệnh native 
+hoặc jpql để viết nhưng vì tốc độ của nó chậm hơn Jdbc template nên em quyết định sử dụng nó 
+
+-Store Producer:sử dụng cho OrderService
+
 -Non-Cluster: để đánh vào cột email,phoneNumber trong các tài khoản
--Partition:Sử dụng để đánh vào bảng type của phần course,vì có 3 loại khóa học chính là:Gym,Pilates,Yoga
--Transaction:quản lý tại từng service
--Thread,Multithread,ExcutorService:sử dụng để cache các cronJob Course,kiểm tra các giao dịch trong trường hợp không nhận đc respone từ phương thức thanh toán
-,gửi mail cho các tài khoản,..
+
+-Transaction:Sử dụng kiến trúc saga quản lý tại từng service,Choreography (Điều phối phi tập trung)
+một luồng của transaction:
+   Khi người dùng mua hàng,một order sẽ được tạo ở OrderService với trạng thái PENDING,xong sau đó sẽ đi đến paymentService để tạo mã thanh toán với trạng thái đang là PENDING
+(cũng sẽ trả về một vài thông tin giao dịch quan trọng),em sẽ viết một hàm để nhận callback từ bên thứ 3 để kiểm tra thông tin giao dịch,nếu nó trả về thành công thì lưu vào 
+db payment và đi đến CourseService để kiểm tra kho và trừ số lượng,nếu trừ số lượng thành công thì gọi đến OrderService cập nhật đơn hàng thành SUCCESS
+Mỗi service tự chịu trách nhiệm thực hiện công việc của mình và phát ra sự kiện khi hoàn thành
+Các service khác lắng nghe sự kiện này và thực hiện hành động tiếp theo nếu cần
+
+-Multithread,ExcutorService:sử dụng để cache các cronJob Course,gửi mail cho các tài khoản,..
+ExcutorService:sử dụng để cache 2 cronJob các khóa học liên quan và chi tiết khóa học
 -FeignClient:giao tiếp giữa các service
 -Redis: Sử dụng để cache các phần mô tả của khóa học,chi tiết khóa học,và các khóa học liên quan
+    +Ưu điểm:là vì redis có cơ chế lưu trữ dữ liệu in-memory trong bộ nhớ RAM,nên tốc độ nhanh hơn so với DB rất nhiều(thường là trong ổ cứng)
+    +Nhược điểm:theo em thấy nhược điểm lớn nhất của redis là việc đồng bộ dữ liệu cache với database
+Để xử lý việc này em sẽ sử dụng một queue trên redis
+cách làm:Mỗi khi có một bản ghi thay đổi thì sẽ lấy bản ghi đó và đẩy lên một queue của redis,xong sau đó tạo các cronJob để các course trên redis sẽ lấy dữ 
+liệu từ queue và ghi đè vào các sản phẩm thay đổi,các course sẽ có dạng key key value
+
 -SpringBootLoging: để log các lỗi ra file
 -JavaMailSender: sử dụng để gửi Mail đến khách hàng(Quên mật khẩu,các thông báo accept,reject PT,...)
 -Kafka:sử dụng chủ yếu để gửi các message từ các service đến notificationService -> thông báo đến khách hàng,người dùng,hoặc khi pt mở 1 khóa học có các bài học
  miễn phí,người dùng sẽ đăng kí với một số lượng rất lớn trong cùng 1 thời điểm,sẽ đưa vào kafka để xử lý 
+
 -Swagger: xuất bản các API
+
+**Anh cho em hỏi là cái này trả lời các công nghệ phỏng vấn hay các công nghệ sử dụng trong đồ án của mình theo anh yêu cầu
+,vì em nghe a hay nhắc là chỉ nên trả lời 1 cách truy xuất db 1 là jpa 2 là template,..

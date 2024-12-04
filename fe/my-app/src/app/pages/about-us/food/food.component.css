@@ -1,0 +1,25 @@
+.optional{
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(202, 202, 202);
+}
+
+
+option{
+  border-radius: 10px;
+}
+
+.content-slide{
+  display: flex;
+}
+
+.img-content img{
+  border-radius: 60px;
+  height: 600px;
+  width: 1000px;
+}
+
+.slide{
+  padding: 50px;
+}

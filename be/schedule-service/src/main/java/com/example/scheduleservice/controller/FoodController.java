@@ -19,6 +19,6 @@ public class FoodController {
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getGroup")
     public ResponseEntity<?> getFoodByGroup(@RequestParam String foodType){
-       return ResponseEntity.ok();
+       return ResponseEntity.ok(foodService.listGroupFood(foodType));
    }
 }

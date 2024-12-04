@@ -24,6 +24,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
@@ -129,6 +130,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Transactional
     public MyRespone checkAndReduceStock(Long courseId,Long orderId) {
         MyRespone myRespone = new MyRespone();
         try {
@@ -148,8 +150,8 @@ public class CourseServiceImpl implements CourseService {
                 myRespone.setMessage("Stock reduced successfully");
 
                 Course newCourse = courseRepository.getCourseById(courseId);
-                String redisKey = getCourseRedisKey(newCourse);
-                template.deleteCourse(redisKey, courseId);
+
+                String redisKey = getCourseRedisKey(courseId);
                 template.updateCourse(redisKey, courseId, newCourse);
                 myRespone.setData(course);
             }else {
@@ -164,27 +166,19 @@ public class CourseServiceImpl implements CourseService {
             myRespone.setStatus(500);
             myRespone.setMessage("Internal server error:" + e.getMessage());
             myRespone.setData(null);
+
         }
         return myRespone;
     }
 
+    private String getCourseRedisKey(Long courseId) {
+        return "course_" + courseId;
+    }
+
+
     private void sendOutOfStockMessage(Long courseId, Long orderId) {
         String message = String.format("Course ID: %d, Order ID: %d is out of stock.", courseId, orderId);
         kafkaTemplate.send("out-of-stock", message);
-    }
-
-    private String getCourseRedisKey(Course course) {
-        String courseType = course.getType();
-        switch (courseType.toLowerCase()) {
-            case "gym":
-                return "course_type_gym";
-            case "yoga":
-                return "course_type_yoga";
-            case "pilates":
-                return "course_type_pilates";
-            default:
-                throw new IllegalArgumentException("Unknown course type: " + courseType);
-        }
     }
 
     @Override

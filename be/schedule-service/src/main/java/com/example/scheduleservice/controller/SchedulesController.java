@@ -67,14 +67,17 @@ public class SchedulesController {
     public ResponseEntity<?> setCompleteSession(@RequestParam Long sessionId){
         return schedulesService.setSessionByUser(sessionId);
     }//ok
+
     @PutMapping("/setCompleteSchedule")
     public ResponseEntity<?>setCompleteSchedule(@RequestParam Long scheduleId){
         return schedulesService.setScheduleByUser(scheduleId);
     }//ok
+
     @GetMapping("/getCountSessionComplete")
     public ResponseEntity<?> getCountSessionCompleteByScheduleId(@RequestParam Long scheduleId){
         return schedulesService.CountSessionComplete(scheduleId);
     }//ok
+
     @GetMapping("/getCountExerciseComplete")
     public ResponseEntity<?> getCountExerciseCompleteBySessionId(@RequestParam Long sessionId){
         return schedulesService.CountExerciseComplete(sessionId);

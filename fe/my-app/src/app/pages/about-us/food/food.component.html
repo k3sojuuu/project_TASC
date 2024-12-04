@@ -1,1 +1,29 @@
-<p>food works!</p>
+<p>Food works!</p>
+<h1>Chọn một loại thực phẩm yêu thích</h1>
+<label for="fruits">Choose</label>
+<select id="fruits" name="fruits" class="optional" (change)="onFoodTypeChange($event)">
+    <option value="protein">Protein</option>
+    <option value="starch">Starch</option>
+    <option value="vitamin">Vitamin</option>
+    <option value="water">Water</option>
+</select>
+<div *ngIf="FoodGroup.length > 0" class="slider-container">
+  <h2>Danh sách thực phẩm:</h2>
+  <div class="slide">
+    <div class="content-slide">
+       <div class="img-content" data-aos="fade-down">
+        <img [src]="img" alt="{{currentFood.nameFood}}" />
+       </div>
+       <div>
+          <p data-aos="fade-down">{{currentFood.nameFood}}</p>
+       </div>
+    </div>
+
+  </div>
+  <button (click)="previousSlide()" >Previous</button>
+  <button (click)="nextSlide()">Next</button>
+</div>
+
+<div *ngIf="FoodGroup.length === 0">
+  <p>Không có dữ liệu để hiển thị.</p>
+</div>

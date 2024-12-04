@@ -56,7 +56,6 @@ public class ScheduleService {
 
         executor.submit(new RelatCourseJob(service, dao));
         executor.submit(new CourseJob(service,dao));
-        executor.shutdown();
     }
 
 }
