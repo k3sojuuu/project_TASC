@@ -46,7 +46,7 @@ ExcutorService:sử dụng để cache 2 cronJob các khóa học liên quan và
     +Nhược điểm:theo em thấy nhược điểm lớn nhất của redis là việc đồng bộ dữ liệu cache với database
 Để xử lý việc này em sẽ sử dụng một queue trên redis
 cách làm:Mỗi khi có một bản ghi thay đổi thì sẽ lấy bản ghi đó và đẩy lên một queue của redis,xong sau đó tạo các cronJob để các course trên redis sẽ lấy dữ 
-liệu từ queue và ghi đè vào các sản phẩm thay đổi,các course sẽ có dạng key key value
+liệu từ queue và ghi đè vào các sản phẩm thay đổi,các course sẽ có dạng key value
 
 -SpringBootLoging: để log các lỗi ra file
 -JavaMailSender: sử dụng để gửi Mail đến khách hàng(Quên mật khẩu,các thông báo accept,reject PT,...)
